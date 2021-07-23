@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -70,33 +71,32 @@ class AuthController extends Controller
 
     public function signup(Request $request)
     {
-        //Validate data
-        $data = $request->only('name', 'email', 'password');
-        $validator = Validator::make($data, [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:6|max:50'
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
         ]);
+
 
         //Send failed response if request is not valid
         if ($validator->fails()) {
             return response()->json(['error' => $validator->messages()], 200);
         }
 
-        //Request is valid, create new user
+        // if ($validator->fails()) {
+        //     return response()->json($validator->errors()->toJson(), 400);
+        // }
+
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
         ]);
 
-        // DB::table('users')->insert([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => bcrypt($request->password)
-        // ]);
+        $token = JWTAuth::fromUser($user);
 
-        //User created, return success response
+        // return response()->json(compact('user', 'token'), 201);
+
         return $this->login($request);
     }
 
