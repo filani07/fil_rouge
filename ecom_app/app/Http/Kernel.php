@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
 
         // To use this middleware register this into Kernel. Open app\Http\Kernel.php
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
+
     ];
 }
