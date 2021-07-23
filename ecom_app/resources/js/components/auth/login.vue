@@ -10,7 +10,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" @submit.prevent="login">
                     <div class="form-group">
                       <input
                         type="email"
@@ -18,6 +18,7 @@
                         id="exampleInputEmail"
                         aria-describedby="emailHelp"
                         placeholder="Enter Email Address"
+                        v-model="form.email"
                       />
                     </div>
                     <div class="form-group">
@@ -26,6 +27,7 @@
                         class="form-control"
                         id="exampleInputPassword"
                         placeholder="Password"
+                        v-model="form.password"
                       />
                     </div>
                     <div class="form-group">
@@ -44,9 +46,9 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <a href="index.html" class="btn btn-primary btn-block"
-                        >Login</a
-                      >
+                      <button type="submit" class="btn btn-primary btn-block">
+                        Login
+                      </button>
                     </div>
                   </form>
                   <hr />
@@ -71,6 +73,28 @@
 </template>
 
 <script>
+// import axios from "axios";
+
+export default {
+  components: {},
+  data() {
+    return {
+      form: {
+        email: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    login() {
+      axios
+        .post("api/auth/login", this.form)
+        .then((res) => console.log(res.data))
+        .catch((error) => console.log(error.response.data));
+    },
+  },
+  beforeMount() {},
+};
 </script>
 
 <style scoped>
