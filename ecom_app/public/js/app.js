@@ -2104,6 +2104,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import axios from "axios";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
@@ -38582,9 +38620,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h2", [_vm._v("my home")])
+  return _c("header", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "video-container" }, [
+      _c("video", {
+        attrs: {
+          src:
+            "https://storage.coverr.co/videos/GK300Fvvg4T1LYiC9SJpUAK36CDldcR7A?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjE0NzE0NjcxfQ.EnOnRFM1w-1SJY_AfEhhjR6S_dPgXx0lj1kKMvZheTk",
+          autoplay: "",
+          loop: "",
+          muted: ""
+        },
+        domProps: { muted: true }
+      })
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("nav", { staticClass: "navbar" }, [
+        _c("a", { staticClass: "logo", attrs: { href: "#" } }, [
+          _vm._v("Logo")
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "nav-links" }, [
+          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Home")])]),
+          _vm._v(" "),
+          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("About")])]),
+          _vm._v(" "),
+          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Gallery")])]),
+          _vm._v(" "),
+          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contact")])]),
+          _vm._v(" "),
+          _c("button", [_vm._v("Sign In")]),
+          _vm._v(" "),
+          _c("button", [_vm._v("Sign Up")])
+        ]),
+        _vm._v(" "),
+        _c("i", { staticClass: "fas fa-bars fa-2x", attrs: { id: "burger" } })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "showcase" }, [
+        _c("h1", [_vm._v("Curvy Road in Snow Covered Forest")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum\n        obcaecati, fuga amet esse quisquam dicta suscipit quasi officia\n        dolorum voluptas. Iste ab beatae quas modi!\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet\n        vitae perspiciatis blanditiis perferendis tenetur aut tempora eaque,\n        officiis hic nostrum?\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("button", [_vm._v("See More")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
