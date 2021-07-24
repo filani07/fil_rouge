@@ -1976,6 +1976,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 // import axios from "axios";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
@@ -1994,6 +2001,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
+    },
+    test: function test() {
+      console.log(User.id());
     }
   },
   beforeMount: function beforeMount() {}
@@ -2239,7 +2249,7 @@ var User = /*#__PURE__*/function () {
   }, {
     key: "hasToken",
     value: function hasToken() {
-      var storeToken = loccalStorage.getItem(token);
+      var storeToken = localStorage.getItem('token');
 
       if (storeToken) {
         return _Token__WEBPACK_IMPORTED_MODULE_0__.default.isValid(storeToken) ? true : false;
@@ -2256,15 +2266,15 @@ var User = /*#__PURE__*/function () {
     key: "name",
     value: function name() {
       if (this.loggedIn()) {
-        return loccalStorage.getItem('user');
+        return localStorage.getItem('user');
       }
     }
   }, {
     key: "id",
     value: function id() {
       if (this.loggedIn()) {
-        var payload = _Token__WEBPACK_IMPORTED_MODULE_0__.default.payload(loccalStorage.getItem('token'));
-        return payload.sub;
+        var payload = _Token__WEBPACK_IMPORTED_MODULE_0__.default.payload(localStorage.getItem('token'));
+        return payload.name;
       }
 
       return false;
@@ -38201,7 +38211,34 @@ var render = function() {
                       _vm._v(" "),
                       _vm._m(1),
                       _vm._v(" "),
-                      _vm._m(2)
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary btn-block",
+                            attrs: { type: "submit" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                      Login\n                    "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary btn-block",
+                            attrs: { type: "button" },
+                            on: { click: _vm.test }
+                          },
+                          [
+                            _vm._v(
+                              "\n                      test\n                    "
+                            )
+                          ]
+                        )
+                      ])
                     ]
                   ),
                   _vm._v(" "),
@@ -38233,7 +38270,7 @@ var render = function() {
                           staticClass: "font-weight-bold small",
                           attrs: { to: "/register" }
                         },
-                        [_vm._v("forget passzord!")]
+                        [_vm._v("forget password!")]
                       )
                     ],
                     1
@@ -38282,18 +38319,6 @@ var staticRenderFns = [
             [_vm._v("Remember Me")]
           )
         ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-primary btn-block", attrs: { type: "submit" } },
-        [_vm._v("\n                      Login\n                    ")]
       )
     ])
   }

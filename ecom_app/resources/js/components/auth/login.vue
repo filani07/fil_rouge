@@ -49,6 +49,13 @@
                       <button type="submit" class="btn btn-primary btn-block">
                         Login
                       </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-block"
+                        @click="test"
+                      >
+                        test
+                      </button>
                     </div>
                   </form>
                   <hr />
@@ -59,7 +66,7 @@
                   </div>
                   <div class="text-center">
                     <router-link to="/register" class="font-weight-bold small"
-                      >forget passzord!</router-link
+                      >forget password!</router-link
                     >
                   </div>
                 </div>
@@ -91,6 +98,9 @@ export default {
         .post("api/auth/login", this.form)
         .then((res) => User.responseAfterlogin(res))
         .catch((error) => console.log(error.response.data));
+    },
+    test() {
+      console.log(User.id());
     },
   },
   beforeMount() {},
