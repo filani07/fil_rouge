@@ -3,7 +3,7 @@ import AppStorage from './AppStorage'
 
 class User{
  
-responseAgterlogin(res)
+responseAfterlogin(res)
 {
     const access_token = res.data.access_token
     const username = res.data.name

@@ -1990,7 +1990,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     login: function login() {
       axios.post("api/auth/login", this.form).then(function (res) {
-        return console.log(res.data);
+        return User.responseAfterlogin(res);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -2182,7 +2182,7 @@ var Token = /*#__PURE__*/function () {
   }, {
     key: "payload",
     value: function payload(token) {
-      var payload = (0,lodash__WEBPACK_IMPORTED_MODULE_0__.split)('.')[1];
+      var payload = token.split('.')[1];
       return this.decode(payload);
     }
   }, {
@@ -2227,8 +2227,8 @@ var User = /*#__PURE__*/function () {
   }
 
   _createClass(User, [{
-    key: "responseAgterlogin",
-    value: function responseAgterlogin(res) {
+    key: "responseAfterlogin",
+    value: function responseAfterlogin(res) {
       var access_token = res.data.access_token;
       var username = res.data.name;
 

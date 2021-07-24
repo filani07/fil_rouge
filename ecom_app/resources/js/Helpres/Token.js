@@ -13,7 +13,7 @@ class Token{
 
     payload(token)
     {
-        const payload = split('.')[1]
+        const payload = token.split('.')[1]
         return this.decode(payload)
 
     }
