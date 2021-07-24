@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -181,9 +181,9 @@
   <script src="{{asset('assets/js/demo/chart-area-demo.js')}}"></script>  
 </body>
 
-</html> --}}
+</html>
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -198,4 +198,4 @@
   </div>
   <script src="{{asset('js/app.js')}}"></script>
 </body>
-</html>
+</html> --}}

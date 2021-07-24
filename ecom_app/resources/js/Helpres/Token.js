@@ -24,5 +24,5 @@ class Token{
 
 }
 
-export default Toekn = new Token();
+export default Token = new Token();
  
