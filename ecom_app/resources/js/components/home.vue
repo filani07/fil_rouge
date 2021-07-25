@@ -28,15 +28,6 @@
         <button>See More</button>
       </section>
     </div>
-
-    <div class="video-container">
-      <video
-        src="https://storage.coverr.co/videos/GK300Fvvg4T1LYiC9SJpUAK36CDldcR7A?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjE0NzE0NjcxfQ.EnOnRFM1w-1SJY_AfEhhjR6S_dPgXx0lj1kKMvZheTk"
-        autoplay
-        loop
-        muted
-      ></video>
-    </div>
   </header>
 </template>
 

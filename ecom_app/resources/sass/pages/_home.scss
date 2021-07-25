@@ -1,14 +1,4 @@
 
-*{
-    box-sizing: border-box;
-    font-family: 'Nunito',sans-serif;
-}
-
-body{
-    margin: 0;
-    overflow-x: hidden;
-}
-
 header{
     min-height: 100vh;
     position: relative;
@@ -109,28 +99,7 @@ header{
             }
         }
     }
-    .video-container{
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        video{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0,0,0,0.82);
-        }
-    }
+
 }
 
 @media(max-width: 850px){

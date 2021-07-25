@@ -49,13 +49,6 @@
                       <button type="submit" class="btn btn-primary btn-block">
                         Login
                       </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-block"
-                        @click="test"
-                      >
-                        test
-                      </button>
                     </div>
                   </form>
                   <hr />
@@ -98,9 +91,6 @@ export default {
         .post("api/auth/login", this.form)
         .then((res) => User.responseAfterlogin(res))
         .catch((error) => console.log(error.response.data));
-    },
-    test() {
-      console.log(User.id());
     },
   },
   beforeMount() {},
