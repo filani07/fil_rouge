@@ -74,6 +74,7 @@
 
 <script>
 // import axios from "axios";
+import Swal from "sweetalert2";
 
 export default {
   created() {
@@ -96,9 +97,41 @@ export default {
         .post("api/auth/login", this.form)
         .then((res) => {
           User.responseAfterlogin(res);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Signed in successfully",
+          });
           this.$router.push({ name: "home" });
         })
-        .catch((error) => console.log(error.response.data));
+        .catch((error) => (this.errors = error.response.data.errors))
+        .catch(() => {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+          Toast.fire({
+            icon: "warning",
+            title: "Invalid Email or Password",
+          });
+        });
     },
   },
   beforeMount() {},
