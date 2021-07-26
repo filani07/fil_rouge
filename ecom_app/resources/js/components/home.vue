@@ -452,15 +452,12 @@
 </template>
 
 <script>
-// import axios from "axios";
-
 export default {
-  components: {},
-  data() {
-    return {};
+  created() {
+    if (!User.loggedIn()) {
+      this.$router.push({ name: "/" });
+    }
   },
-  methods: {},
-  beforeMount() {},
 };
 </script>
 

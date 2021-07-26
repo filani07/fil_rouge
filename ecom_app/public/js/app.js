@@ -2037,7 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     if (User.loggedIn()) {
       this.$router.push({
-        name: "home"
+        name: "/"
       });
     }
   },
@@ -2612,14 +2612,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// import axios from "axios";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {},
-  data: function data() {
-    return {};
-  },
-  methods: {},
-  beforeMount: function beforeMount() {}
+  created: function created() {
+    if (!User.loggedIn()) {
+      this.$router.push({
+        name: "/"
+      });
+    }
+  }
 });
 
 /***/ }),
