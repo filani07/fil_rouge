@@ -2034,6 +2034,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 // import axios from "axios";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  created: function created() {
+    if (User.loggedIn()) {
+      this.$router.push({
+        name: "home"
+      });
+    }
+  },
   components: {},
   data: function data() {
     return {
@@ -2045,8 +2052,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
+      var _this = this;
+
       axios.post("api/auth/login", this.form).then(function (res) {
-        return User.responseAfterlogin(res);
+        User.responseAfterlogin(res);
+
+        _this.$router.push({
+          name: "home"
+        });
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
