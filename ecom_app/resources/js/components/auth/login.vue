@@ -20,6 +20,9 @@
                         placeholder="Enter Email Address"
                         v-model="form.email"
                       />
+                      <small class="text-danger" v-if="errors.email">{{
+                        errors.email[0]
+                      }}</small>
                     </div>
                     <div class="form-group">
                       <input
@@ -29,6 +32,9 @@
                         placeholder="Password"
                         v-model="form.password"
                       />
+                      <small class="text-danger" v-if="errors.password">{{
+                        errors.password[0]
+                      }}</small>
                     </div>
                     <div class="form-group">
                       <div
@@ -89,6 +95,7 @@ export default {
         email: null,
         password: null,
       },
+      errors: {},
     };
   },
   methods: {
@@ -115,8 +122,8 @@ export default {
           });
           this.$router.push({ name: "home" });
         })
-        // .catch((error) => (this.errors = error.response.data.errors))
-        .catch(() => {
+        .catch((error) => {
+          this.errors = error.response.data.errors;
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
