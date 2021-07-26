@@ -2078,9 +2078,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "home"
         });
-      })["catch"](function (error) {
-        return _this.errors = error.response.data.errors;
-      })["catch"](function () {
+      }) // .catch((error) => (this.errors = error.response.data.errors))
+      ["catch"](function () {
         var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().mixin({
           toast: true,
           position: "top-end",
@@ -2869,8 +2868,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var _Helpres_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Helpres/User */ "./resources/js/Helpres/User.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -2880,23 +2877,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.use(vue_router__WEBPACK_IMPORTED_MODULE
  //import User class
 
 
-window.User = _Helpres_User__WEBPACK_IMPORTED_MODULE_3__.default; // Start sweet alert
-// import sweet alert
-
-
-Window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_4___default());
-var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: function didOpen(toast) {
-    toast.addEventListener('mouseenter', (sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().stopTimer));
-    toast.addEventListener('mouseleave', (sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().resumeTimer));
-  }
-}); // End Sweet alert
-
+window.User = _Helpres_User__WEBPACK_IMPORTED_MODULE_3__.default;
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__.routes,
   mode: 'history'

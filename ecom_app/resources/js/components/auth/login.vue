@@ -108,13 +108,14 @@ export default {
               toast.addEventListener("mouseleave", Swal.resumeTimer);
             },
           });
+
           Toast.fire({
             icon: "success",
             title: "Signed in successfully",
           });
           this.$router.push({ name: "home" });
         })
-        .catch((error) => (this.errors = error.response.data.errors))
+        // .catch((error) => (this.errors = error.response.data.errors))
         .catch(() => {
           const Toast = Swal.mixin({
             toast: true,
