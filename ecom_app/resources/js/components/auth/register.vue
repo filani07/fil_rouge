@@ -19,6 +19,9 @@
                         placeholder="Enter Your Full Name"
                         v-model="form.name"
                       />
+                      <small class="text-danger" v-if="errors.name">{{
+                        errors.name[0]
+                      }}</small>
                     </div>
 
                     <div class="form-group">
@@ -30,6 +33,9 @@
                         placeholder="Enter Email Address"
                         v-model="form.email"
                       />
+                      <small class="text-danger" v-if="errors.email">{{
+                        errors.email[0]
+                      }}</small>
                     </div>
                     <div class="form-group">
                       <input
@@ -39,6 +45,9 @@
                         placeholder="Password"
                         v-model="form.password"
                       />
+                      <small class="text-danger" v-if="errors.password">{{
+                        errors.password[0]
+                      }}</small>
                     </div>
                     <div class="form-group">
                       <input
@@ -48,6 +57,9 @@
                         placeholder="Confirme Password"
                         v-model="form.password_confirmation"
                       />
+                      <small class="text-danger" v-if="errors.password">{{
+                        errors.password[0]
+                      }}</small>
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-block">
@@ -118,24 +130,7 @@ export default {
           });
           this.$router.push({ name: "home" });
         })
-        .catch((error) => {
-          this.errors = error.response.data.errors;
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener("mouseenter", Swal.stopTimer);
-              toast.addEventListener("mouseleave", Swal.resumeTimer);
-            },
-          });
-          Toast.fire({
-            icon: "warning",
-            title: "Invalid Email or Password",
-          });
-        });
+        .catch((error) => (this.errors = error.response.data.error));
     },
   },
   beforeMount() {},
