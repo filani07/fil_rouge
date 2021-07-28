@@ -4,8 +4,9 @@
 import Swal from "sweetalert2";
 export default {
   created() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    User.clearToken();
 
     const Toast = Swal.mixin({
       toast: true,

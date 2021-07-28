@@ -2127,8 +2127,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    User.clearToken();
     var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().mixin({
       toast: true,
       position: "top-end",
@@ -2975,6 +2976,12 @@ var User = /*#__PURE__*/function () {
       }
 
       return false;
+    }
+  }, {
+    key: "clearToken",
+    value: function clearToken() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
     }
   }]);
 

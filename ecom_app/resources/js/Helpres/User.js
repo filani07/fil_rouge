@@ -44,6 +44,12 @@ id(){
      return false
 }
 
+clearToken()
+{
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+}
+
 
 }
 
