@@ -14,6 +14,10 @@ import {routes} from './routes'
 import User from './Helpres/User'
 window.User = User
 
+//import Notification class
+import Notification from './Helpres/Notification'
+window.Notification = Notification
+
 
 const router = new VueRouter({
   routes,
