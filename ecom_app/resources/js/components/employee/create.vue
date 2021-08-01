@@ -13,7 +13,11 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Add Employee</h1>
                   </div>
-                  <form class="user" @submit.prevent="signup">
+                  <form
+                    class="user"
+                    @submit.prevent="employeeInsert"
+                    enctype="multipart/form-data"
+                  >
                     <div class="form-group">
                       <div class="form-row">
                         <div class="col-md-6">
@@ -24,6 +28,9 @@
                             placeholder="Enter Your Full Name"
                             v-model="form.name"
                           />
+                          <small class="text-danger" v-if="errors.name">{{
+                            errors.name[0]
+                          }}</small>
                         </div>
                         <div class="col-md-6">
                           <input
@@ -33,6 +40,9 @@
                             placeholder="Enter Your Email"
                             v-model="form.email"
                           />
+                          <small class="text-danger" v-if="errors.email">{{
+                            errors.email[0]
+                          }}</small>
                         </div>
                       </div>
                     </div>
@@ -47,6 +57,9 @@
                             placeholder="Enter Your Address"
                             v-model="form.address"
                           />
+                          <small class="text-danger" v-if="errors.address">{{
+                            errors.address[0]
+                          }}</small>
                         </div>
                         <div class="col-md-6">
                           <input
@@ -54,8 +67,11 @@
                             class="form-control"
                             id="exampleInputFirstName"
                             placeholder="Enter Your Salarry"
-                            v-model="form.salarry"
+                            v-model="form.sallery"
                           />
+                          <small class="text-danger" v-if="errors.sallery">{{
+                            errors.sallery[0]
+                          }}</small>
                         </div>
                       </div>
                     </div>
@@ -70,6 +86,11 @@
                             placeholder="Enter Your Joining Date"
                             v-model="form.joining_date"
                           />
+                          <small
+                            class="text-danger"
+                            v-if="errors.joining_date"
+                            >{{ errors.joining_date[0] }}</small
+                          >
                         </div>
                         <div class="col-md-6">
                           <input
@@ -79,6 +100,9 @@
                             placeholder="Enter Your NID"
                             v-model="form.nid"
                           />
+                          <small class="text-danger" v-if="errors.nid">{{
+                            errors.nid[0]
+                          }}</small>
                         </div>
                       </div>
                     </div>
@@ -93,6 +117,9 @@
                             placeholder="Enter Your Phone Number"
                             v-model="form.phone"
                           />
+                          <small class="text-danger" v-if="errors.phone">{{
+                            errors.phone[0]
+                          }}</small>
                         </div>
                         <div class="col-md-6"></div>
                       </div>
@@ -109,6 +136,9 @@
                           <label class="custom-file-label" for="customFile"
                             >Choose file</label
                           >
+                          <small class="text-danger" v-if="errors.photo">{{
+                            errors.photo[0]
+                          }}</small>
                         </div>
                         <div class="col-md-6">
                           <img
@@ -153,14 +183,20 @@ export default {
   data() {
     return {
       form: {
-        email: null,
-        password: null,
         name: null,
-        password: null,
-        password_confirmation: null,
+        email: null,
+        phone: null,
+        sallery: null,
+        address: null,
+        photo: null,
+        nid: null,
+        joining_date: null,
       },
       errors: {},
     };
+  },
+  methods: {
+    employeeInsert() {},
   },
 };
 </script>

@@ -2324,8 +2324,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2479,16 +2507,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   components: {},
   data: function data() {
-    var _form;
-
     return {
-      form: (_form = {
+      form: {
+        name: null,
         email: null,
-        password: null,
-        name: null
-      }, _defineProperty(_form, "password", null), _defineProperty(_form, "password_confirmation", null), _form),
+        phone: null,
+        sallery: null,
+        address: null,
+        photo: null,
+        nid: null,
+        joining_date: null
+      },
       errors: {}
     };
+  },
+  methods: {
+    employeeInsert: function employeeInsert() {}
   }
 });
 
@@ -46213,10 +46247,11 @@ var render = function() {
                     "form",
                     {
                       staticClass: "user",
+                      attrs: { enctype: "multipart/form-data" },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
-                          return _vm.signup.apply(null, arguments)
+                          return _vm.employeeInsert.apply(null, arguments)
                         }
                       }
                     },
@@ -46252,7 +46287,13 @@ var render = function() {
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.name
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.name[0]))
+                                ])
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
@@ -46284,7 +46325,13 @@ var render = function() {
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.email
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.email[0]))
+                                ])
+                              : _vm._e()
                           ])
                         ])
                       ]),
@@ -46320,7 +46367,13 @@ var render = function() {
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.address
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.address[0]))
+                                ])
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
@@ -46329,8 +46382,8 @@ var render = function() {
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.form.salarry,
-                                  expression: "form.salarry"
+                                  value: _vm.form.sallery,
+                                  expression: "form.sallery"
                                 }
                               ],
                               staticClass: "form-control",
@@ -46339,7 +46392,7 @@ var render = function() {
                                 id: "exampleInputFirstName",
                                 placeholder: "Enter Your Salarry"
                               },
-                              domProps: { value: _vm.form.salarry },
+                              domProps: { value: _vm.form.sallery },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -46347,12 +46400,18 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.form,
-                                    "salarry",
+                                    "sallery",
                                     $event.target.value
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.sallery
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.sallery[0]))
+                                ])
+                              : _vm._e()
                           ])
                         ])
                       ]),
@@ -46388,7 +46447,13 @@ var render = function() {
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.joining_date
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.joining_date[0]))
+                                ])
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
@@ -46416,7 +46481,13 @@ var render = function() {
                                   _vm.$set(_vm.form, "nid", $event.target.value)
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.nid
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.nid[0]))
+                                ])
+                              : _vm._e()
                           ])
                         ])
                       ]),
@@ -46452,14 +46523,46 @@ var render = function() {
                                   )
                                 }
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.phone
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.phone[0]))
+                                ])
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" })
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("div", { staticClass: "form-row" }, [
+                          _c("div", { staticClass: "col-md-6" }, [
+                            _c("input", {
+                              staticClass: "custom-file-input",
+                              attrs: { type: "file", id: "customFile" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-file-label",
+                                attrs: { for: "customFile" }
+                              },
+                              [_vm._v("Choose file")]
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.photo
+                              ? _c("small", { staticClass: "text-danger" }, [
+                                  _vm._v(_vm._s(_vm.errors.photo[0]))
+                                ])
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1)
+                        ])
+                      ]),
                       _vm._v(" "),
                       _vm._m(2)
                     ]
@@ -46494,28 +46597,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "form-row" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("input", {
-            staticClass: "custom-file-input",
-            attrs: { type: "file", id: "customFile" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
-            [_vm._v("Choose file")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("img", {
-            staticStyle: { height: "40px", width: "40px" },
-            attrs: { src: "form.photo", alt: "" }
-          })
-        ])
-      ])
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c("img", {
+        staticStyle: { height: "40px", width: "40px" },
+        attrs: { src: "form.photo", alt: "" }
+      })
     ])
   },
   function() {
