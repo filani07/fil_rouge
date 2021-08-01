@@ -1,7 +1,10 @@
 <template >
   <div>
+    <div class="row">
+      <router-link to="" class="btn btn-primary">All Employee </router-link>
+    </div>
     <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-xl-12 col-lg-12 col-md-12">
         <div class="card shadow-sm my-5">
           <div class="card-body p-0">
             <div class="row">
@@ -12,66 +15,119 @@
                   </div>
                   <form class="user" @submit.prevent="signup">
                     <div class="form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="exampleInputFirstName"
-                        placeholder="Enter Your Full Name"
-                        v-model="form.name"
-                      />
-                      <small class="text-danger" v-if="errors.name">{{
-                        errors.name[0]
-                      }}</small>
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Full Name"
+                            v-model="form.name"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Email"
+                            v-model="form.email"
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     <div class="form-group">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter Email Address"
-                        v-model="form.email"
-                      />
-                      <small class="text-danger" v-if="errors.email">{{
-                        errors.email[0]
-                      }}</small>
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Address"
+                            v-model="form.address"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Salarry"
+                            v-model="form.salarry"
+                          />
+                        </div>
+                      </div>
                     </div>
+
                     <div class="form-group">
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="exampleInputPassword"
-                        placeholder="Password"
-                        v-model="form.password"
-                      />
-                      <small class="text-danger" v-if="errors.password">{{
-                        errors.password[0]
-                      }}</small>
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Joining Date"
+                            v-model="form.joining_date"
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your NID"
+                            v-model="form.nid"
+                          />
+                        </div>
+                      </div>
                     </div>
+
                     <div class="form-group">
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="exampleInputPasswordRepeat"
-                        placeholder="Confirme Password"
-                        v-model="form.password_confirmation"
-                      />
-                      <small class="text-danger" v-if="errors.password">{{
-                        errors.password[0]
-                      }}</small>
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            placeholder="Enter Your Phone Number"
+                            v-model="form.phone"
+                          />
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
                     </div>
+
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <input
+                            type="file"
+                            class="custom-file-input"
+                            id="customFile"
+                          />
+                          <label class="custom-file-label" for="customFile"
+                            >Choose file</label
+                          >
+                        </div>
+                        <div class="col-md-6">
+                          <img
+                            src="form.photo"
+                            alt=""
+                            style="height: 40px; width: 40px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-block">
-                        Register
+                        Submit
                       </button>
                     </div>
                   </form>
-                  <div class="text-center">
-                    <router-link class="font-weight-bold small" to="/"
-                      >Already have an account?</router-link
-                    >
-                  </div>
+                  <hr />
+                  <div class="text-center"></div>
                   <div class="text-center"></div>
                 </div>
               </div>
