@@ -25,4 +25,4 @@ Route::group([
 });
 
 
-Route::apiResource('employee', [EmployeeController::class]);
+// Route::apiResource('employee', [EmployeeController::class]);
