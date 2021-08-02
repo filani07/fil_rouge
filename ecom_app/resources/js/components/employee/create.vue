@@ -145,7 +145,7 @@
                         <div class="col-md-6">
                           <img
                             src="form.photo"
-                            alt=""
+                            alt="add photo"
                             style="height: 40px; width: 40px"
                           />
                         </div>

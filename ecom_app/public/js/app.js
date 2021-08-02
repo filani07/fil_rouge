@@ -46743,7 +46743,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-6" }, [
       _c("img", {
         staticStyle: { height: "40px", width: "40px" },
-        attrs: { src: "form.photo", alt: "" }
+        attrs: { src: "form.photo", alt: "add photo" }
       })
     ])
   },
