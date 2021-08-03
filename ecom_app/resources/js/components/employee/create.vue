@@ -145,7 +145,7 @@
                         </div>
                         <div class="col-md-6">
                           <img
-                            src="form.photo"
+                            :src="form.photo"
                             alt="add photo"
                             style="height: 40px; width: 40px"
                           />
@@ -204,10 +204,26 @@ export default {
       if (file.size > 1048770) {
         Notification.image_validation();
       } else {
+        // console.log(file.name);
         let reader = new FileReader();
+        reader.onload = (event) => {
+          this.form.photo = event.target.result;
+          console.log(event.target.result);
+        };
+        reader.readAsDataURL(file);
       }
     },
-    employeeInsert() {},
+    employeeInsert() {
+      axios
+        .post("/api/employee", this.form)
+        .then(() => {
+          this.$router.push({ name: "employee" });
+          Notification.success();
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
+    },
   },
 };
 </script>
