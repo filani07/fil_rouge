@@ -134,6 +134,7 @@
                             type="file"
                             class="custom-file-input"
                             id="customFile"
+                            @change="onFileSelected"
                           />
                           <label class="custom-file-label" for="customFile"
                             >Choose file</label
@@ -198,6 +199,14 @@ export default {
     };
   },
   methods: {
+    onFileSelected(event) {
+      let file = event.target.files[0];
+      if (file.size > 1048770) {
+        Notification.image_validation();
+      } else {
+        let reader = new FileReader();
+      }
+    },
     employeeInsert() {},
   },
 };

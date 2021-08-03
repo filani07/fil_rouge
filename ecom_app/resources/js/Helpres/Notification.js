@@ -20,13 +20,23 @@ class Notification{
             }).show();
         }
 
-        error(){
+        warning(){
             new Noty({
                 type:'warning',
                 layout:'topRight',
                 // text: 'Something Went Wrong ! ',
                 text: 'Opps Wrong ! ',
                 timeout:1000
+                
+            }).show();
+        }
+
+        image_validation(){
+            new Noty({
+                type:'error',
+                layout:'topRight',
+                text: 'Upload Image less than 1MB ',
+                timeout:3000
                 
             }).show();
         }
