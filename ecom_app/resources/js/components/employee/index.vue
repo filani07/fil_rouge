@@ -43,16 +43,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="empolyee in filterSearch" :key="empolyee.id">
-                  <td>{{ empolyee.name }}</td>
-                  <td><img :src="empolyee.photo" alt="" id="m_photo" /></td>
-                  <td>{{ empolyee.phone }}</td>
-                  <td>{{ empolyee.sallery }}</td>
-                  <td>{{ empolyee.joining_date }}</td>
+                <tr v-for="employee in filterSearch" :key="employee.id">
+                  <td>{{ employee.name }}</td>
+                  <td><img :src="employee.photo" alt="" id="m_photo" /></td>
+                  <td>{{ employee.phone }}</td>
+                  <td>{{ employee.sallery }}</td>
+                  <td>{{ employee.joining_date }}</td>
                   <td>
-                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                    <router-link
+                      :to="{ name: 'edit-employee' }"
+                      class="btn btn-sm btn-primary"
+                      >Edit</router-link
+                    >
                     <a
-                      @click="deleteEmpolyee(empolyee.id)"
+                      @click="deleteEmployee(employee.id)"
                       class="btn btn-sm btn-danger"
                       >Delete</a
                     >
@@ -89,8 +93,8 @@ export default {
 
   computed: {
     filterSearch() {
-      return this.employees.filter((empolyee) => {
-        return empolyee.name.match(this.searchTerm);
+      return this.employees.filter((employee) => {
+        return employee.name.match(this.searchTerm);
       });
     },
   },
@@ -101,7 +105,7 @@ export default {
         .then(({ data }) => (this.employees = data))
         .catch((err) => {});
     },
-    deleteEmpolyee(id) {
+    deleteEmployee(id) {
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",

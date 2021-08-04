@@ -2649,6 +2649,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
@@ -2669,8 +2673,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filterSearch: function filterSearch() {
       var _this = this;
 
-      return this.employees.filter(function (empolyee) {
-        return empolyee.name.match(_this.searchTerm);
+      return this.employees.filter(function (employee) {
+        return employee.name.match(_this.searchTerm);
       });
     }
   },
@@ -2683,7 +2687,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _this2.employees = data;
       })["catch"](function (err) {});
     },
-    deleteEmpolyee: function deleteEmpolyee(id) {
+    deleteEmployee: function deleteEmployee(id) {
       var _this3 = this;
 
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -47389,45 +47393,49 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.filterSearch, function(empolyee) {
-                    return _c("tr", { key: empolyee.id }, [
-                      _c("td", [_vm._v(_vm._s(empolyee.name))]),
+                  _vm._l(_vm.filterSearch, function(employee) {
+                    return _c("tr", { key: employee.id }, [
+                      _c("td", [_vm._v(_vm._s(employee.name))]),
                       _vm._v(" "),
                       _c("td", [
                         _c("img", {
-                          attrs: { src: empolyee.photo, alt: "", id: "m_photo" }
+                          attrs: { src: employee.photo, alt: "", id: "m_photo" }
                         })
                       ]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(empolyee.phone))]),
+                      _c("td", [_vm._v(_vm._s(employee.phone))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(empolyee.sallery))]),
+                      _c("td", [_vm._v(_vm._s(employee.sallery))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(empolyee.joining_date))]),
+                      _c("td", [_vm._v(_vm._s(employee.joining_date))]),
                       _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            attrs: { href: "#" }
-                          },
-                          [_vm._v("Edit")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-sm btn-danger",
-                            on: {
-                              click: function($event) {
-                                return _vm.deleteEmpolyee(empolyee.id)
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "btn btn-sm btn-primary",
+                              attrs: { to: { name: "edit-employee" } }
+                            },
+                            [_vm._v("Edit")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteEmployee(employee.id)
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("Delete")]
-                        )
-                      ])
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ],
+                        1
+                      )
                     ])
                   }),
                   0
