@@ -2637,6 +2637,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
@@ -2649,16 +2657,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   components: {},
   data: function data() {
     return {
-      employees: []
+      employees: [],
+      searchTerm: ""
     };
+  },
+  computed: {
+    filterSearch: function filterSearch() {
+      var _this = this;
+
+      return this.employees.filter(function (empolyee) {
+        return empolyee.phone.match(_this.searchTerm);
+      });
+    }
   },
   methods: {
     allEmplyee: function allEmplyee() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/api/employee").then(function (_ref) {
         var data = _ref.data;
-        return _this.employees = data;
+        return _this2.employees = data;
       })["catch"](function (err) {});
     }
   }
@@ -47301,6 +47319,30 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("br"),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.searchTerm,
+          expression: "searchTerm"
+        }
+      ],
+      staticClass: "form-control",
+      staticStyle: { width: "300px" },
+      attrs: { type: "text", placeholder: "Search Here" },
+      domProps: { value: _vm.searchTerm },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.searchTerm = $event.target.value
+        }
+      }
+    }),
+    _vm._v(" "),
     _c("br"),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
@@ -47317,7 +47359,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.employees, function(empolyee) {
+                  _vm._l(_vm.filterSearch, function(empolyee) {
                     return _c("tr", { key: empolyee.id }, [
                       _c("td", [_vm._v(_vm._s(empolyee.name))]),
                       _vm._v(" "),
