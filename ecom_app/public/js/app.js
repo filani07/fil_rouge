@@ -2645,6 +2645,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
@@ -2666,22 +2670,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       return this.employees.filter(function (empolyee) {
-        return empolyee.phone.match(_this.searchTerm);
+        return empolyee.name.match(_this.searchTerm);
       });
     }
   },
   methods: {
-    allEmplyee: function allEmplyee() {
+    allEmployee: function allEmployee() {
       var _this2 = this;
 
       axios.get("/api/employee").then(function (_ref) {
         var data = _ref.data;
         return _this2.employees = data;
       })["catch"](function (err) {});
+    },
+    deleteEmpolyee: function deleteEmpolyee(id) {
+      var _this3 = this;
+
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          axios["delete"]("/api/employee/" + id).then(function () {
+            _this3.employees = _this3.employees.filter(function (employee) {
+              return employee.id != id;
+            });
+          })["catch"](function () {
+            _this3.$router.push({
+              name: "employee"
+            });
+          });
+          sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire("Deleted!", "Your file has been deleted.", "success");
+        }
+      });
     }
   }
 }, "created", function created() {
-  this.allEmplyee();
+  this.allEmployee();
 }));
 
 /***/ }),
@@ -47375,7 +47405,29 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(empolyee.joining_date))]),
                       _vm._v(" "),
-                      _vm._m(2, true)
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-sm btn-primary",
+                            attrs: { href: "#" }
+                          },
+                          [_vm._v("Edit")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-sm btn-danger",
+                            on: {
+                              click: function($event) {
+                                return _vm.deleteEmpolyee(empolyee.id)
+                              }
+                            }
+                          },
+                          [_vm._v("Delete")]
+                        )
+                      ])
                     ])
                   }),
                   0
@@ -47425,20 +47477,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Joining Dste")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { staticClass: "btn btn-sm btn-primary", attrs: { href: "#" } }, [
-        _vm._v("Edit")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "btn btn-sm btn-danger", attrs: { href: "#" } }, [
-        _vm._v("Delete")
       ])
     ])
   }

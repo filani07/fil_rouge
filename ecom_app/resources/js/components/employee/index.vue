@@ -51,7 +51,11 @@
                   <td>{{ empolyee.joining_date }}</td>
                   <td>
                     <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                    <a
+                      @click="deleteEmpolyee(empolyee.id)"
+                      class="btn btn-sm btn-danger"
+                      >Delete</a
+                    >
                   </td>
                 </tr>
               </tbody>
@@ -86,20 +90,45 @@ export default {
   computed: {
     filterSearch() {
       return this.employees.filter((empolyee) => {
-        return empolyee.phone.match(this.searchTerm);
+        return empolyee.name.match(this.searchTerm);
       });
     },
   },
   methods: {
-    allEmplyee() {
+    allEmployee() {
       axios
         .get("/api/employee")
         .then(({ data }) => (this.employees = data))
         .catch((err) => {});
     },
+    deleteEmpolyee(id) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios
+            .delete("/api/employee/" + id)
+            .then(() => {
+              this.employees = this.employees.filter((employee) => {
+                return employee.id != id;
+              });
+            })
+            .catch(() => {
+              this.$router.push({ name: "employee" });
+            });
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        }
+      });
+    },
   },
   created() {
-    this.allEmplyee();
+    this.allEmployee();
   },
 };
 </script>
