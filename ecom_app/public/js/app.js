@@ -2801,6 +2801,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new FileReader();
 
       reader.onload = function (event) {
+        _this2.form.photo = event.target.result;
         _this2.form.newphoto = event.target.result;
         console.log(event.target.result);
       };

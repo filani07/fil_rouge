@@ -218,6 +218,7 @@ export default {
         // console.log(file.name);
         let reader = new FileReader();
         reader.onload = (event) => {
+          this.form.photo = event.target.result;
           this.form.newphoto = event.target.result;
           console.log(event.target.result);
         };
