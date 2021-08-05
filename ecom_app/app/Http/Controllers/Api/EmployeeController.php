@@ -82,7 +82,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee = DB::table('employees')->where('id', $id)->first();
+        return response()->json($employee);
     }
 
 
@@ -95,7 +96,37 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['phone'] = $request->phone;
+        $data['sallery'] = $request->sallery;
+        $data['address'] = $request->address;
+        $data['nid'] = $request->nid;
+        $data['joining_date'] = $request->joining_date;
+        $image = $request->newphoto;
+
+        if ($image) {
+            $position = strpos($image, ';');
+            $sub = substr($image, 0, $position);
+            $ext = explode('/', $sub)[1];
+
+            $name = time() . "." . $ext;
+            $img = Image::make($image)->resize(240, 200);
+            $upload_path = 'assets/employee/';
+            $image_url = $upload_path . $name;
+            $success = $img->save($image_url);
+            if ($success) {
+                $data['photo'] =  $image_url;
+                $img = DB::table('employees')->where('id', $id)->first();
+                $done = unlink($upload_path);
+                $user = DB::table('employees')->where('id', $id)->update($data);
+            }
+        } else {
+            $oldphoto = $request->photo;
+            $data['photo'] = $oldphoto;
+            $user = DB::table('employees')->where('id', $id)->update($data);
+        }
     }
 
     /**
