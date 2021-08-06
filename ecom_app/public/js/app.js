@@ -3637,7 +3637,7 @@ __webpack_require__.r(__webpack_exports__);
         name: null,
         email: null,
         phone: null,
-        sallery: null,
+        shopname: null,
         address: null,
         photo: null
       },
@@ -3664,12 +3664,12 @@ __webpack_require__.r(__webpack_exports__);
         reader.readAsDataURL(file);
       }
     },
-    employeeInsert: function employeeInsert() {
+    supplierInsert: function supplierInsert() {
       var _this2 = this;
 
-      axios.post("/api/employee", this.form).then(function () {
+      axios.post("/api/supplier", this.form).then(function () {
         _this2.$router.push({
-          name: "employee"
+          name: "supplier"
         });
 
         Notification.success();
@@ -49595,7 +49595,7 @@ var render = function() {
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
-                          return _vm.employeeInsert.apply(null, arguments)
+                          return _vm.supplierInsert.apply(null, arguments)
                         }
                       }
                     },
