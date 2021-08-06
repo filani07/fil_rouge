@@ -60,6 +60,7 @@ class SupplierController extends Controller
             $supplier->photo = $image_url;
             $supplier->save();
         } else {
+
             Supplier::create($request->only('name', 'email', 'phone', 'shopname', 'address'));
         }
     }
@@ -96,6 +97,13 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $supplier = DB::table('suppliers')->where('id', $id)->first();
+        $photo = $supplier->photo;
+        if ($photo) {
+            unlink($photo);
+            DB::table('suppliers')->where('id', $id)->delete();
+        } else {
+            DB::table('suppliers')->where('id', $id)->delete();
+        }
     }
 }

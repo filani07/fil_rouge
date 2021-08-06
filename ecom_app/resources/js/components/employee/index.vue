@@ -60,7 +60,7 @@
                     >
                     <a
                       @click="deleteEmployee(employee.id)"
-                      class="btn btn-sm btn-danger"
+                      class="btn btn-sm btn-danger text-light"
                       >Delete</a
                     >
                   </td>
