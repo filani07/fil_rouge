@@ -60,14 +60,7 @@ class SupplierController extends Controller
             $supplier->photo = $image_url;
             $supplier->save();
         } else {
-            $supplier = new Supplier;
-            $supplier->name = $request->name;
-            $supplier->email = $request->email;
-            $supplier->phone = $request->phone;
-            $supplier->shopname = $request->shopname;
-            $supplier->address = $request->address;
-            $supplier->save();
-            // $supplier->create($request->all());
+            Supplier::create($request->only('name', 'email', 'phone', 'shopname', 'address'));
         }
     }
 
