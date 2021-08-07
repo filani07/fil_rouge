@@ -1,8 +1,8 @@
 <template >
   <div>
     <div class="row">
-      <router-link to="/catagory" class="btn btn-primary"
-        >All Catagory
+      <router-link to="/category" class="btn btn-primary"
+        >All Category
       </router-link>
     </div>
     <div class="row justify-content-center">
@@ -13,22 +13,24 @@
               <div class="col-lg-12">
                 <div class="login-form">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Add Catagory</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Add Category</h1>
                   </div>
-                  <form class="user" @submit.prevent="CatagoryInsert">
+                  <form class="user" @submit.prevent="CategoryInsert">
                     <div class="form-group">
                       <div class="form-row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                           <input
                             type="text"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your Phone Number"
-                            v-model="form.phone"
+                            placeholder="Enter Your Category Name"
+                            v-model="form.category_name"
                           />
-                          <small class="text-danger" v-if="errors.phone">{{
-                            errors.phone[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.category_name"
+                            >{{ errors.category_name[0] }}</small
+                          >
                         </div>
                         <div class="col-md-6"></div>
                       </div>
@@ -67,36 +69,17 @@ export default {
   data() {
     return {
       form: {
-        name: null,
-        email: null,
-        phone: null,
-        shopname: null,
-        address: null,
-        photo: null,
+        category_name: null,
       },
       errors: {},
     };
   },
   methods: {
-    onFileSelected(event) {
-      let file = event.target.files[0];
-      if (file.size > 1048770) {
-        Notification.image_validation();
-      } else {
-        // console.log(file.name);
-        let reader = new FileReader();
-        reader.onload = (event) => {
-          this.form.photo = event.target.result;
-          console.log(event.target.result);
-        };
-        reader.readAsDataURL(file);
-      }
-    },
-    CatagoryInsert() {
+    CategoryInsert() {
       axios
-        .post("/api/supplier", this.form)
+        .post("/api/category", this.form)
         .then(() => {
-          this.$router.push({ name: "supplier" });
+          this.$router.push({ name: "category" });
           Notification.success();
         })
         .catch((error) => {

@@ -2380,6 +2380,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
@@ -2393,47 +2395,23 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        name: null,
-        email: null,
-        phone: null,
-        shopname: null,
-        address: null,
-        photo: null
+        category_name: null
       },
       errors: {}
     };
   },
   methods: {
-    onFileSelected: function onFileSelected(event) {
+    CategoryInsert: function CategoryInsert() {
       var _this = this;
 
-      var file = event.target.files[0];
-
-      if (file.size > 1048770) {
-        Notification.image_validation();
-      } else {
-        // console.log(file.name);
-        var reader = new FileReader();
-
-        reader.onload = function (event) {
-          _this.form.photo = event.target.result;
-          console.log(event.target.result);
-        };
-
-        reader.readAsDataURL(file);
-      }
-    },
-    CatagoryInsert: function CatagoryInsert() {
-      var _this2 = this;
-
-      axios.post("/api/supplier", this.form).then(function () {
-        _this2.$router.push({
-          name: "supplier"
+      axios.post("/api/category", this.form).then(function () {
+        _this.$router.push({
+          name: "category"
         });
 
         Notification.success();
       })["catch"](function (error) {
-        _this2.errors = error.response.data.errors;
+        _this.errors = error.response.data.errors;
       });
     }
   }
@@ -48484,8 +48462,8 @@ var render = function() {
       [
         _c(
           "router-link",
-          { staticClass: "btn btn-primary", attrs: { to: "/catagory" } },
-          [_vm._v("All Catagory\n    ")]
+          { staticClass: "btn btn-primary", attrs: { to: "/category" } },
+          [_vm._v("All Category\n    ")]
         )
       ],
       1
@@ -48507,30 +48485,30 @@ var render = function() {
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
-                          return _vm.CatagoryInsert.apply(null, arguments)
+                          return _vm.CategoryInsert.apply(null, arguments)
                         }
                       }
                     },
                     [
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
-                          _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "col-md-12" }, [
                             _c("input", {
                               directives: [
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.form.phone,
-                                  expression: "form.phone"
+                                  value: _vm.form.category_name,
+                                  expression: "form.category_name"
                                 }
                               ],
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
                                 id: "exampleInputFirstName",
-                                placeholder: "Enter Your Phone Number"
+                                placeholder: "Enter Your Category Name"
                               },
-                              domProps: { value: _vm.form.phone },
+                              domProps: { value: _vm.form.category_name },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -48538,16 +48516,16 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.form,
-                                    "phone",
+                                    "category_name",
                                     $event.target.value
                                   )
                                 }
                               }
                             }),
                             _vm._v(" "),
-                            _vm.errors.phone
+                            _vm.errors.category_name
                               ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.phone[0]))
+                                  _vm._v(_vm._s(_vm.errors.category_name[0]))
                                 ])
                               : _vm._e()
                           ]),
@@ -48581,7 +48559,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("h1", { staticClass: "h4 text-gray-900 mb-4" }, [
-        _vm._v("Add Catagory")
+        _vm._v("Add Category")
       ])
     ])
   },
