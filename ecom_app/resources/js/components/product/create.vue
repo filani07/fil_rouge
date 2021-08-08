@@ -23,28 +23,38 @@
                     <div class="form-group">
                       <div class="form-row">
                         <div class="col-md-6">
+                          <label for="exampleFormControlSelect1"
+                            >Product Name</label
+                          >
                           <input
                             type="text"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your Full Name"
-                            v-model="form.name"
+                            placeholder="Enter Your Product Name"
+                            v-model="form.product_name"
                           />
-                          <small class="text-danger" v-if="errors.name">{{
-                            errors.name[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.product_name"
+                            >{{ errors.product_name[0] }}</small
+                          >
                         </div>
                         <div class="col-md-6">
+                          <label for="exampleFormControlSelect1"
+                            >Product Code</label
+                          >
                           <input
-                            type="email"
+                            type="text"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your Email"
-                            v-model="form.email"
+                            placeholder="Enter Your Product Code"
+                            v-model="form.product_code"
                           />
-                          <small class="text-danger" v-if="errors.email">{{
-                            errors.email[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.product_code"
+                            >{{ errors.product_code[0] }}</small
+                          >
                         </div>
                       </div>
                     </div>
@@ -52,28 +62,86 @@
                     <div class="form-group">
                       <div class="form-row">
                         <div class="col-md-6">
-                          <input
-                            type="text"
+                          <label for="exampleFormControlSelect1"
+                            >Product Category</label
+                          >
+                          <select
                             class="form-control"
-                            id="exampleInputFirstName"
-                            placeholder="Enter Your Address"
-                            v-model="form.address"
-                          />
-                          <small class="text-danger" v-if="errors.address">{{
-                            errors.address[0]
-                          }}</small>
+                            id="exampleFormControlSelect1"
+                          >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
                         </div>
                         <div class="col-md-6">
+                          <label for="exampleFormControlSelect1"
+                            >Product Supplier</label
+                          >
+                          <select
+                            class="form-control"
+                            id="exampleFormControlSelect1"
+                          >
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-md-4">
+                          <label for="exampleFormControlSelect1"
+                            >Product Root</label
+                          >
                           <input
                             type="text"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your Salarry"
-                            v-model="form.sallery"
+                            v-model="form.root"
                           />
-                          <small class="text-danger" v-if="errors.sallery">{{
-                            errors.sallery[0]
+                          <small class="text-danger" v-if="errors.root">{{
+                            errors.root[0]
                           }}</small>
+                        </div>
+
+                        <div class="col-md-4">
+                          <label for="exampleFormControlSelect1"
+                            >Buying Price</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            v-model="form.buying_price"
+                          />
+                          <small
+                            class="text-danger"
+                            v-if="errors.buying_price"
+                            >{{ errors.buying_price[0] }}</small
+                          >
+                        </div>
+                        <div class="col-md-4">
+                          <label for="exampleFormControlSelect1"
+                            >Selling Price</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputFirstName"
+                            v-model="form.selling_price"
+                          />
+                          <small
+                            class="text-danger"
+                            v-if="errors.selling_price"
+                            >{{ errors.selling_price[0] }}</small
+                          >
                         </div>
                       </div>
                     </div>
@@ -81,49 +149,38 @@
                     <div class="form-group">
                       <div class="form-row">
                         <div class="col-md-6">
+                          <label for="exampleFormControlSelect1"
+                            >Buying Date</label
+                          >
                           <input
                             type="date"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your Joining Date"
-                            v-model="form.joining_date"
+                            v-model="form.buying_date"
                           />
                           <small
                             class="text-danger"
-                            v-if="errors.joining_date"
-                            >{{ errors.joining_date[0] }}</small
+                            v-if="errors.buying_date"
+                            >{{ errors.buying_date[0] }}</small
                           >
                         </div>
                         <div class="col-md-6">
+                          <label for="exampleFormControlSelect1"
+                            >Product Quantity</label
+                          >
                           <input
                             type="text"
                             class="form-control"
                             id="exampleInputFirstName"
-                            placeholder="Enter Your NID"
-                            v-model="form.nid"
+                            placeholder="Enter Your Quantity"
+                            v-model="form.product_quantity"
                           />
-                          <small class="text-danger" v-if="errors.nid">{{
-                            errors.nid[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.product_quantity"
+                            >{{ errors.product_quantity[0] }}</small
+                          >
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="exampleInputFirstName"
-                            placeholder="Enter Your Phone Number"
-                            v-model="form.phone"
-                          />
-                          <small class="text-danger" v-if="errors.phone">{{
-                            errors.phone[0]
-                          }}</small>
-                        </div>
-                        <div class="col-md-6"></div>
                       </div>
                     </div>
 
@@ -139,13 +196,13 @@
                           <label class="custom-file-label" for="customFile"
                             >Choose file</label
                           >
-                          <small class="text-danger" v-if="errors.photo">{{
-                            errors.photo[0]
+                          <small class="text-danger" v-if="errors.image">{{
+                            errors.image[0]
                           }}</small>
                         </div>
                         <div class="col-md-6">
                           <img
-                            :src="form.photo"
+                            :src="form.image"
                             id="m_photo"
                             alt="add photo"
                             style="height: 40px; width: 40px"
