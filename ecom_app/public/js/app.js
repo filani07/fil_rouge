@@ -2491,10 +2491,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$components$d = {
   created: function created() {
     if (!User.loggedIn()) {
@@ -4080,10 +4076,6 @@ var _created$components$d;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -49043,7 +49035,6 @@ var render = function() {
                     "form",
                     {
                       staticClass: "user",
-                      attrs: { enctype: "multipart/form-data" },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
@@ -51596,7 +51587,6 @@ var render = function() {
                     "form",
                     {
                       staticClass: "user",
-                      attrs: { enctype: "multipart/form-data" },
                       on: {
                         submit: function($event) {
                           $event.preventDefault()

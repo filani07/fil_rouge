@@ -15,11 +15,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Category Update</h1>
                   </div>
-                  <form
-                    class="user"
-                    @submit.prevent="categoryUpdate"
-                    enctype="multipart/form-data"
-                  >
+                  <form class="user" @submit.prevent="categoryUpdate">
                     <div class="form-group">
                       <div class="form-row">
                         <div class="col-md-12">
