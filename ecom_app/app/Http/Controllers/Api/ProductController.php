@@ -88,7 +88,7 @@ class ProductController extends Controller
             $product->buying_date = $request->buying_date;
             $product->product_quantity = $request->product_quantity;
             $product->save();
-            // $employee->create($request->all());
+            // $product->create($request->all());
         }
     }
 
@@ -100,7 +100,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = DB::table('products')->where('id', $id)->first();
+        return response()->json($product);
     }
 
 
@@ -114,7 +115,40 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = array();
+        $data['category_id'] = $request->category_id;
+        $data['product_name'] = $request->product_name;
+        $data['product_code'] = $request->product_code;
+        $data['root'] = $request->root;
+        $data['buying_price'] = $request->buying_price;
+        $data['selling_price'] = $request->selling_price;
+        $data['supplier_id'] = $request->supplier_id;
+        $data['buying_date'] = $request->buying_date;
+        $data['product_quantity'] = $request->product_quantity;
+        $image = $request->newimage;
+
+        if ($image) {
+            $position = strpos($image, ';');
+            $sub = substr($image, 0, $position);
+            $ext = explode('/', $sub)[1];
+
+            $name = time() . "." . $ext;
+            $img = Image::make($image)->resize(240, 200);
+            $upload_path = 'assets/product/';
+            $image_url = $upload_path . $name;
+            $success = $img->save($image_url);
+            if ($success) {
+                $data['image'] =  $image_url;
+                $img = DB::table('products')->where('id', $id)->first();
+                $image_path = $img->image;
+                $done = unlink($image_path);
+                $user = DB::table('products')->where('id', $id)->update($data);
+            }
+        } else {
+            $oldimage = $request->image;
+            $data['image'] = $oldimage;
+            $user = DB::table('products')->where('id', $id)->update($data);
+        }
     }
 
     /**

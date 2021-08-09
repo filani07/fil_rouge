@@ -131,7 +131,7 @@ export default {
               });
             })
             .catch(() => {
-              this.$router.push({ name: "product" });
+              this.$router.push({ name: "product*" });
             });
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
         }
