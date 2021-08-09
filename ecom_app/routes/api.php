@@ -31,4 +31,4 @@ Route::group([
 Route::apiResource('employee', EmployeeController::class);
 Route::apiResource('supplier', SupplierController::class);
 Route::apiResource('category', CategoryController::class);
-Route::apiResource('product', ProductpController::class);
+Route::apiResource('product', ProductController::class);
