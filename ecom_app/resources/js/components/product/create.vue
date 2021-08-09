@@ -17,7 +17,7 @@
                   </div>
                   <form
                     class="user"
-                    @submit.prevent="employeeInsert"
+                    @submit.prevent="ProductInsert"
                     enctype="multipart/form-data"
                   >
                     <div class="form-group">
@@ -281,11 +281,11 @@ export default {
         reader.readAsDataURL(file);
       }
     },
-    employeeInsert() {
+    ProductInsert() {
       axios
-        .post("/api/employee", this.form)
+        .post("/api/product", this.form)
         .then(() => {
-          this.$router.push({ name: "employee" });
+          this.$router.push({ name: "product" });
           Notification.success();
         })
         .catch((error) => {
