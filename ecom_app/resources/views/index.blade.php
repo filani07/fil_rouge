@@ -17,7 +17,6 @@
 
 <body id="page-top">
     <div id="app">
-
         <div id="wrapper">
             <nav id="sidebar" style="display: none"
                 v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/forget' ? flase : true">
@@ -102,8 +101,6 @@
 
                     <hr class="sidebar-divider">
 
-
-                    {{-- <div class="version" id="version-ruangadmin"></div> --}}
                 </ul>
                 <!-- Sidebar -->
             </nav>
