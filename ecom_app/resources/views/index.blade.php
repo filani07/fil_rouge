@@ -42,7 +42,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                             aria-expanded="true" aria-controls="collapseBootstrap">
-                            <i class="far fa-fw fa-window-maximize"></i>
+                            <i class="fas fa-users"></i>
                             <span>Employee</span>
                         </a>
                         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
@@ -56,7 +56,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap1"
                             aria-expanded="true" aria-controls="collapseBootstrap1">
-                            <i class="far fa-fw fa-window-maximize"></i>
+                            <i class="fas fa-dolly-flatbed"></i>
                             <span>Suppliers</span>
                         </a>
                         <div id="collapseBootstrap1" class="collapse" aria-labelledby="headingBootstrap"
@@ -70,7 +70,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
                             aria-expanded="true" aria-controls="collapseBootstrap2">
-                            <i class="far fa-fw fa-window-maximize"></i>
+                            <i class="fab fa-buffer"></i>
                             <span>Category</span>
                         </a>
                         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap"
@@ -85,7 +85,7 @@
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
                             aria-expanded="true" aria-controls="collapseBootstrap3">
-                            <i class="far fa-fw fa-window-maximize"></i>
+                            <i class="fas fa-cube"></i>
                             <span>Product</span>
                         </a>
                         <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap"
