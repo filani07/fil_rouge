@@ -18,9 +18,9 @@
 <body id="page-top">
     <div id="app">
         <div id="wrapper">
+            <!-- Sidebar -->
             <nav id="sidebar" style="display: none"
                 v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/forget' ? flase : true">
-                <!-- Sidebar -->
                 <ul class=" navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                         <div class="sidebar-brand-icon">
@@ -102,8 +102,9 @@
                     <hr class="sidebar-divider">
 
                 </ul>
-                <!-- Sidebar -->
             </nav>
+            <!-- Sidebar -->
+
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     <!-- TopBar -->
