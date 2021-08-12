@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
     <link href="{{ asset('assets/img/logo/logo.png') }}" rel="icon">
     <title>MyEcom - Dashboard</title>
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -18,7 +16,8 @@
 <body id="page-top">
     <div id="app">
         <div id="wrapper">
-            <nav id="sidebar">
+            <nav id="sidebar" style="display: none"
+                v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/forget' ? flase : true">
                 <!-- Sidebar -->
                 <ul class=" navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -106,7 +105,9 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <div id="content">
                     <!-- TopBar -->
-                    <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" id="topbar">
+                    <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" id="topbar"
+                        v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/forget' ? flase : true"
+                        style="display: none">
                         <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
@@ -184,6 +185,13 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        let token = localStorage.getItem('token')
+        if (token) {
+            $("#sidebar").css("display", "");
+            $("#topbar").css("display", "");
+        }
+    </script>
     <script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('assets/js/ruang-admin.min.js') }}"></script>
 

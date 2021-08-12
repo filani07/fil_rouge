@@ -174,6 +174,8 @@
 
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   created() {
     if (!User.loggedIn()) {
