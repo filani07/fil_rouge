@@ -1,3 +1,10 @@
+const burger = document.getElementById('burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+})
+
 (function($) {
   "use strict"; // Start of use strict
 
@@ -78,8 +85,9 @@ $('.popover-dismiss').popover({
 });
 
 
-// Version in Sidebar
-
-var version = document.getElementById('version-ruangadmin');
-
-version.innerHTML = "Version 1.0.1";
+let token = localStorage.getItem('token')
+if (token) {
+    $("#sidebar").css("display", "");
+    $("#topbar").css("display", "");
+    $("#footer").css("display", "");
+}
