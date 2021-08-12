@@ -1,4 +1,4 @@
-<template >
+<template>
   <!-- Sidebar -->
   <nav id="sidebar" style="display: none">
     <ul
