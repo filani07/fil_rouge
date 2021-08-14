@@ -9,7 +9,7 @@
     <title>MyEcom - Dashboard</title>
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('assets/css/ruang-admin.css') }}" rel="stylesheet">
+    <link id="stylesheetID" href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -164,9 +164,7 @@
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
+                                2021
                                 - developed by
                                 <b><a href="" target="_blank">Oussama Filani</a></b>
                             </span>

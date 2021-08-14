@@ -4703,7 +4703,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       products: [],
-      searchTerm: ""
+      searchTerm: "",
+      style: ""
     };
   },
   computed: {
@@ -4727,6 +4728,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }
 }, "created", function created() {
   this.allProduct();
+  var cssElement = document.getElementsByTagName("head");
+  cssElement.remove();
 }));
 
 /***/ }),

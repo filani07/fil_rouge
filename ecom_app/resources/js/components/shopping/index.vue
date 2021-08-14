@@ -60,6 +60,7 @@ export default {
     return {
       products: [],
       searchTerm: "",
+      style: "",
     };
   },
 
@@ -81,6 +82,8 @@ export default {
   },
   created() {
     this.allProduct();
+    const cssElement = document.getElementsByTagName("head");
+    cssElement.remove();
   },
 };
 </script>
