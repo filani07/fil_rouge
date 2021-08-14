@@ -1,6 +1,4 @@
-<template>
-  <h2>hi hi hi hi hi h i</h2>
-</template>
+<template></template>
 
 
 <script>
