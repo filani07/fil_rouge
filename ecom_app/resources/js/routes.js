@@ -5,7 +5,6 @@ let logout = require('./components/auth/logout.vue').default;
 
 //End Authentication
 let home = require('./components/home.vue').default;
-let acueile = require('./components/acueile.vue').default;
 
 
 //Employee component
@@ -37,7 +36,6 @@ export const routes = [
     { path: '/forget', component: forget, name : 'forget' },
     { path: '/logout', component: logout, name : 'logout' },
     { path: '/home', component: home, name : 'home' },
-    { path: '/acueile', component: acueile, name : 'acueile' },
 
     //Employee routes
     { path: '/store-employee', component: sotreemployee, name : 'store-employee' },
