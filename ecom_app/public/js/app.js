@@ -4039,6 +4039,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
@@ -4056,7 +4058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         product_code: null,
         category_id: null,
         supplier_id: null,
-        root: null,
+        description: null,
         buying_price: null,
         selling_price: null,
         buying_date: null,
@@ -4373,6 +4375,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$components$d = {
   created: function created() {
@@ -4390,7 +4393,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         product_code: "",
         category_id: "",
         supplier_id: "",
-        root: "",
+        description: "",
         image: "",
         newimage: "",
         buying_price: "",
@@ -52740,24 +52743,24 @@ var render = function() {
                             _c(
                               "label",
                               { attrs: { for: "exampleFormControlSelect1" } },
-                              [_vm._v("Product Root")]
+                              [_vm._v("Product description")]
                             ),
                             _vm._v(" "),
-                            _c("input", {
+                            _c("textarea", {
                               directives: [
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.form.root,
-                                  expression: "form.root"
+                                  value: _vm.form.description,
+                                  expression: "form.description"
                                 }
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "text",
-                                id: "exampleInputFirstName"
+                                id: "exampleFormControlTextarea1",
+                                rows: "3"
                               },
-                              domProps: { value: _vm.form.root },
+                              domProps: { value: _vm.form.description },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -52765,16 +52768,16 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.form,
-                                    "root",
+                                    "description",
                                     $event.target.value
                                   )
                                 }
                               }
                             }),
                             _vm._v(" "),
-                            _vm.errors.root
+                            _vm.errors.description
                               ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.root[0]))
+                                  _vm._v(_vm._s(_vm.errors.description[0]))
                                 ])
                               : _vm._e()
                           ]),
@@ -53320,24 +53323,24 @@ var render = function() {
                             _c(
                               "label",
                               { attrs: { for: "exampleFormControlSelect1" } },
-                              [_vm._v("Product Root")]
+                              [_vm._v("Product description")]
                             ),
                             _vm._v(" "),
-                            _c("input", {
+                            _c("textarea", {
                               directives: [
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: _vm.form.root,
-                                  expression: "form.root"
+                                  value: _vm.form.description,
+                                  expression: "form.description"
                                 }
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "text",
-                                id: "exampleInputFirstName"
+                                id: "exampleFormControlTextarea1",
+                                rows: "3"
                               },
-                              domProps: { value: _vm.form.root },
+                              domProps: { value: _vm.form.description },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -53345,16 +53348,16 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     _vm.form,
-                                    "root",
+                                    "description",
                                     $event.target.value
                                   )
                                 }
                               }
                             }),
                             _vm._v(" "),
-                            _vm.errors.root
+                            _vm.errors.description
                               ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.root[0]))
+                                  _vm._v(_vm._s(_vm.errors.description[0]))
                                 ])
                               : _vm._e()
                           ]),
@@ -53713,7 +53716,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(product.selling_price))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(product.root))]),
+                      _c("td", [_vm._v(_vm._s(product.description))]),
                       _vm._v(" "),
                       _c(
                         "td",
@@ -53797,7 +53800,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Selling price")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Root")]),
+        _c("th", [_vm._v("description")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])

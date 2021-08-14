@@ -40,7 +40,7 @@
                   <th>Category</th>
                   <th>Buying price</th>
                   <th>Selling price</th>
-                  <th>Root</th>
+                  <th>description</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -52,7 +52,7 @@
                   <td>{{ product.category_name }}</td>
                   <td>{{ product.buying_price }}</td>
                   <td>{{ product.selling_price }}</td>
-                  <td>{{ product.root }}</td>
+                  <td>{{ product.description }}</td>
                   <td>
                     <router-link
                       :to="{

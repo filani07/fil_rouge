@@ -68,7 +68,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->product_name = $request->product_name;
             $product->product_code = $request->product_code;
-            $product->root = $request->root;
+            $product->description = $request->description;
             $product->buying_price = $request->buying_price;
             $product->selling_price = $request->selling_price;
             $product->supplier_id = $request->supplier_id;
@@ -81,7 +81,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->product_name = $request->product_name;
             $product->product_code = $request->product_code;
-            $product->root = $request->root;
+            $product->description = $request->description;
             $product->buying_price = $request->buying_price;
             $product->selling_price = $request->selling_price;
             $product->supplier_id = $request->supplier_id;
@@ -119,7 +119,7 @@ class ProductController extends Controller
         $data['category_id'] = $request->category_id;
         $data['product_name'] = $request->product_name;
         $data['product_code'] = $request->product_code;
-        $data['root'] = $request->root;
+        $data['description'] = $request->description;
         $data['buying_price'] = $request->buying_price;
         $data['selling_price'] = $request->selling_price;
         $data['supplier_id'] = $request->supplier_id;

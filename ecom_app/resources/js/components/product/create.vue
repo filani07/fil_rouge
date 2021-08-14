@@ -104,16 +104,18 @@
                       <div class="form-row">
                         <div class="col-md-4">
                           <label for="exampleFormControlSelect1"
-                            >Product Root</label
+                            >Product description</label
                           >
-                          <input
-                            type="text"
+                   
+                          <textarea
                             class="form-control"
-                            id="exampleInputFirstName"
-                            v-model="form.root"
-                          />
-                          <small class="text-danger" v-if="errors.root">{{
-                            errors.root[0]
+                            id="exampleFormControlTextarea1"
+                            v-model="form.description"
+                            rows="3"
+                          ></textarea>
+
+                          <small class="text-danger" v-if="errors.description">{{
+                            errors.description[0]
                           }}</small>
                         </div>
 
@@ -254,7 +256,7 @@ export default {
         product_code: null,
         category_id: null,
         supplier_id: null,
-        root: null,
+        description: null,
         buying_price: null,
         selling_price: null,
         buying_date: null,
