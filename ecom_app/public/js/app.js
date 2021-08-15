@@ -1988,13 +1988,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (User.loggedIn()) {
-      if (localStorage.getItem("role") == "admin") {
+      if (User.role() === "admin") {
         this.$router.push({
           name: "home"
         });
       }
 
-      if (localStorage.getItem("role") == "client") {
+      if (User.role() === "client") {
         this.$router.push({
           name: "shop"
         });
@@ -2033,13 +2033,13 @@ __webpack_require__.r(__webpack_exports__);
           title: "Signed in successfully"
         });
 
-        if (localStorage.getItem("role") == "admin") {
+        if (User.role() == "admin") {
           _this.$router.push({
             name: "home"
           });
         }
 
-        if (localStorage.getItem("role") == "client") {
+        if (User.role() == "client") {
           _this.$router.push({
             name: "shop"
           });
@@ -2219,7 +2219,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     if (User.loggedIn()) {
       this.$router.push({
-        name: "home"
+        name: "shop"
       });
     }
   },
@@ -2259,7 +2259,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
 
         _this.$router.push({
-          name: "home"
+          name: "shop"
         });
       })["catch"](function (error) {
         return _this.errors = error.response.data.error;
@@ -2345,7 +2345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -2453,7 +2453,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$components$d = {
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -2584,7 +2584,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -2839,7 +2839,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -3094,7 +3094,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$components$d = {
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -3261,7 +3261,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -3791,7 +3791,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -4057,10 +4057,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -4395,7 +4397,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$components$d = {
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -4580,7 +4582,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
   created: function created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({
         name: "/"
       });
@@ -4655,8 +4657,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -4707,14 +4707,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
-  created: function created() {
-    if (!User.loggedIn()) {
-      this.$router.push({
-        name: "/"
-      });
-    }
-  },
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
     return {
@@ -4740,10 +4733,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return _this2.products = data;
       })["catch"](function (err) {});
     }
-  }
-}, "created", function created() {
-  this.allProduct();
-}));
+  },
+  created: function created() {
+    if (!User.loggedIn() || User.role() === "admin") {
+      this.$router.push({
+        name: "/"
+      });
+    }
+
+    this.allProduct();
+  } //    mounted() {
+  //      this.style = document.createElement('link');
+  //      this.style.type = "text/css";
+  //      this.style.href = 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
+  //      document.head.append(this.style);
+  //  }
+
+});
 
 /***/ }),
 
@@ -5611,7 +5617,17 @@ var User = /*#__PURE__*/function () {
     value: function id() {
       if (this.loggedIn()) {
         var payload = _Token__WEBPACK_IMPORTED_MODULE_0__.default.payload(localStorage.getItem('token'));
-        return payload.name;
+        return payload.sub;
+      }
+
+      return false;
+    }
+  }, {
+    key: "role",
+    value: function role() {
+      if (this.loggedIn()) {
+        var payload = _Token__WEBPACK_IMPORTED_MODULE_0__.default.payload(localStorage.getItem('token'));
+        return payload.role;
       }
 
       return false;

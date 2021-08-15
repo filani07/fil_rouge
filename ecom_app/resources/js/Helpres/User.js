@@ -38,7 +38,16 @@ name(){
 id(){
     if(this.loggedIn()){
         const payload = Token.payload(localStorage.getItem('token'))
-        return payload.name
+        return payload.sub
+     }
+
+     return false
+}
+
+role(){
+    if(this.loggedIn()){
+        const payload = Token.payload(localStorage.getItem('token'))
+        return payload.role
      }
 
      return false

@@ -454,7 +454,7 @@
 <script>
 export default {
   created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({ name: "/" });
     }
   },

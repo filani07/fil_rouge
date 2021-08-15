@@ -50,11 +50,6 @@
 
 <script>
 export default {
-  created() {
-    if (!User.loggedIn()) {
-      this.$router.push({ name: "/" });
-    }
-  },
   components: {},
   data() {
     return {
@@ -80,6 +75,9 @@ export default {
     },
   },
   created() {
+    if (!User.loggedIn() || User.role() === "admin") {
+      this.$router.push({ name: "/" });
+    }
     this.allProduct();
   },
 

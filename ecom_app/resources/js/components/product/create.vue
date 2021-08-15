@@ -106,7 +106,7 @@
                           <label for="exampleFormControlSelect1"
                             >Product description</label
                           >
-                   
+
                           <textarea
                             class="form-control"
                             id="exampleFormControlTextarea1"
@@ -114,9 +114,11 @@
                             rows="3"
                           ></textarea>
 
-                          <small class="text-danger" v-if="errors.description">{{
-                            errors.description[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.description"
+                            >{{ errors.description[0] }}</small
+                          >
                         </div>
 
                         <div class="col-md-4">
@@ -244,7 +246,7 @@ import Swal from "sweetalert2";
 
 export default {
   created() {
-    if (!User.loggedIn()) {
+    if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({ name: "/" });
     }
   },

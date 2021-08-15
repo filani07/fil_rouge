@@ -84,10 +84,10 @@ import Swal from "sweetalert2";
 export default {
   created() {
     if (User.loggedIn()) {
-      if (localStorage.getItem("role") == "admin") {
+      if (User.role() === "admin") {
         this.$router.push({ name: "home" });
       }
-      if (localStorage.getItem("role") == "client") {
+      if (User.role() === "client") {
         this.$router.push({ name: "shop" });
       }
     }
@@ -125,10 +125,10 @@ export default {
             title: "Signed in successfully",
           });
 
-          if (localStorage.getItem("role") == "admin") {
+          if (User.role() == "admin") {
             this.$router.push({ name: "home" });
           }
-          if (localStorage.getItem("role") == "client") {
+          if (User.role() == "client") {
             this.$router.push({ name: "shop" });
           }
         })

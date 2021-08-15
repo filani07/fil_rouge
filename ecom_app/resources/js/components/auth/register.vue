@@ -90,7 +90,7 @@ import Swal from "sweetalert2";
 export default {
   created() {
     if (User.loggedIn()) {
-      this.$router.push({ name: "home" });
+      this.$router.push({ name: "shop" });
     }
   },
   components: {},
@@ -128,7 +128,7 @@ export default {
             icon: "success",
             title: "Signed in successfully",
           });
-          this.$router.push({ name: "home" });
+          this.$router.push({ name: "shop" });
         })
         .catch((error) => (this.errors = error.response.data.error));
     },
