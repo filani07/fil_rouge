@@ -113,7 +113,17 @@ class CartController extends Controller
             ->orderBy('products.id', 'DESC')
             ->get();
 
-        return response()->json([$cart, 'cartItem' => $cart->count(), 'total' => $cart->sum('buying_price')]);
+        return response()->json([$cart, 'cartItem' => $cart->count(), 'total' => $cart->sum('selling_price')]);
+    }
+
+    public function getCartUser(Request $request)
+    {
+        $user = DB::table('users')
+            ->select('users.name', 'users.email', 'users.phone', 'users.address')
+            ->where('users.id', $request->user_id)
+            ->get();
+
+        return response()->json($user);
     }
 
     public function confirmCart(Request $request)

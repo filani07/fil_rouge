@@ -39,7 +39,6 @@
                 <thead class="text-muted">
                   <tr class="small text-uppercase">
                     <th scope="col">Product</th>
-                    <th scope="col" width="120">Quantity</th>
                     <th scope="col" width="120">Price</th>
                     <th
                       scope="col"
@@ -59,38 +58,17 @@
                           <a href="#" class="title text-dark" data-abc="true">{{
                             cart.product_name
                           }}</a>
-                          <p class="text-muted small">
-                            SIZE: L <br />
-                            Brand: MAXTRA
-                          </p>
+                          <p class="text-muted small">Brand: MAXTRA</p>
                         </figcaption>
                       </figure>
                     </td>
-                    <td>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </td>
+
                     <td>
                       <div class="price-wrap">
-                        <var class="price">$10.00</var>
-                        <small class="text-muted"> $9.20 each </small>
+                        <var class="price">${{ cart.selling_price }}</var>
                       </div>
                     </td>
                     <td class="text-right d-none d-md-block">
-                      <a
-                        data-original-title="Save to Wishlist"
-                        title=""
-                        href=""
-                        class="btn btn-light"
-                        data-toggle="tooltip"
-                        data-abc="true"
-                      >
-                        <i class="fa fa-heart"></i
-                      ></a>
                       <a href="" class="btn btn-light" data-abc="true">
                         Remove</a
                       >
@@ -101,27 +79,37 @@
             </div>
           </div>
         </aside>
-        <aside class="col-lg-3">
+        <aside class="col-lg-3 mb-5">
           <div class="card mb-3">
             <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <label>Have coupon?</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control coupon"
-                      name=""
-                      placeholder="Coupon code"
-                    />
-                    <span class="input-group-append">
-                      <button class="btn btn-primary btn-apply coupon">
-                        Apply
-                      </button>
-                    </span>
-                  </div>
-                </div>
-              </form>
+              <dl class="dlist-align">
+                <dt>Name:</dt>
+                <dd class="text-right b ml-3">
+                  <strong>{{ Cartuser[0].name }}</strong>
+                </dd>
+              </dl>
+
+              <dl class="dlist-align">
+                <dt>Email:</dt>
+                <dd class="text-right b ml-3">
+                  <strong>{{ Cartuser[0].email }}</strong>
+                </dd>
+              </dl>
+              <dl class="dlist-align">
+                <dt>Phone:</dt>
+                <dd class="text-right b ml-3">
+                  <strong>{{ Cartuser[0].phone }}</strong>
+                </dd>
+              </dl>
+              <br />
+              <hr />
+              <br />
+              <dl class="dlist-align">
+                <dt>Address:</dt>
+                <dd class="text-right b ml-3">
+                  <strong>{{ Cartuser[0].address }}</strong>
+                </dd>
+              </dl>
             </div>
           </div>
           <div class="card">
@@ -162,6 +150,7 @@ export default {
   data() {
     return {
       carts: null,
+      Cartuser: null,
 
       form: {
         user_id: User.id(),
@@ -178,6 +167,14 @@ export default {
         .then(({ data }) => (this.carts = data))
         .catch((err) => {});
     },
+
+    UserCart() {
+      axios
+        .post("/api/getCartUser", this.form)
+        .then(({ data }) => (this.Cartuser = data))
+        .catch((err) => {});
+    },
+
     MakePurchase() {
       axios
         .post("/api/confirmCart", this.form)
@@ -192,6 +189,7 @@ export default {
       this.$router.push({ name: "/" });
     }
     this.allCart();
+    this.UserCart();
   },
 };
 </script>

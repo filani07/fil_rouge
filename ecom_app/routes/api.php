@@ -41,3 +41,4 @@ Route::apiResource('cart', CartController::class);
 
 Route::post('showcart', [CartController::class, 'showcart']);
 Route::post('confirmCart', [CartController::class, 'confirmCart']);
+Route::post('getCartUser', [CartController::class, 'getCartUser']);
