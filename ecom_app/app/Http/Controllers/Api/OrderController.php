@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,7 +16,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order = Order::all();
+        return response()->json($order);
     }
 
     /**
@@ -25,7 +28,15 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $Order = new Order;
+        $today = date("Y-m-d");
+        // $user_id = Auth::user()->id;
+        $Order->user_id = $request->input('user_id', 14);
+        $Order->status = $request->input('status', 'pending');
+        $Order->date = $request->input('date', $today);
+
+        $Order->save();
     }
 
     /**

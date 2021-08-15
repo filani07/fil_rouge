@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CartController extends Controller
 {
@@ -14,7 +15,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $cart = Cart::all();
+        return response()->json($cart);
     }
 
     /**
@@ -25,7 +27,13 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate(
+            [
+                'product_id' => 'required',
+                'order_id' => 'required',
+            ]
+        );
+        Cart::create($request->all());
     }
 
     /**
