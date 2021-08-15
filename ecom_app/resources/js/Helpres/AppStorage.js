@@ -7,7 +7,7 @@ class AppStorage{
 
     storeUser(user)
     {
-        localStorage.setItem('user',user)
+        localStorage.setItem('role',user)
     }
 
     store(token,user)
@@ -19,7 +19,7 @@ class AppStorage{
     clear()
     {
         localStorage.removeItem('token')
-        localStorage.removeItem('user')
+        localStorage.removeItem('role')
     }
 
     getToken()
@@ -29,7 +29,7 @@ class AppStorage{
 
     getUser()
     {
-        localStorage.getItem('user')
+        localStorage.getItem('role')
     }
 }
 

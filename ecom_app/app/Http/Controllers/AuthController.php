@@ -130,6 +130,7 @@ class AuthController extends Controller
             'name' => auth()->user()->name,
             'user_id' => auth()->user()->id,
             'email' => auth()->user()->email,
+            'role' => auth()->user()->role,
         ]);
     }
 }

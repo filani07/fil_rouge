@@ -6,7 +6,7 @@ class User{
 responseAfterlogin(res)
 {
     const access_token = res.data.access_token
-    const username = res.data.name
+    const username = res.data.role
     if(Token.isValid(access_token))
     {
         AppStorage.store(access_token,username)
@@ -31,7 +31,7 @@ loggedIn()
 
 name(){
     if(this.loggedIn()){
-       return localStorage.getItem('user')
+       return localStorage.getItem('role')
     }
 }
 
@@ -47,7 +47,7 @@ id(){
 clearToken()
 {
     localStorage.removeItem('token')
-    localStorage.removeItem('user')
+    localStorage.removeItem('role')
 }
 
 

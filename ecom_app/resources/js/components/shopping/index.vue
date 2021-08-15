@@ -60,7 +60,6 @@ export default {
     return {
       products: [],
       searchTerm: "",
-      style: "",
     };
   },
 
@@ -82,9 +81,14 @@ export default {
   },
   created() {
     this.allProduct();
-    const cssElement = document.getElementsByTagName("head");
-    cssElement.remove();
   },
+
+  //    mounted() {
+  //      this.style = document.createElement('link');
+  //      this.style.type = "text/css";
+  //      this.style.href = 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
+  //      document.head.append(this.style);
+  //  }
 };
 </script>
 

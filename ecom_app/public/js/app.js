@@ -1988,9 +1988,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (User.loggedIn()) {
-      this.$router.push({
-        name: "home"
-      });
+      if (localStorage.getItem("role") == "admin") {
+        this.$router.push({
+          name: "home"
+        });
+      }
+
+      if (localStorage.getItem("role") == "client") {
+        this.$router.push({
+          name: "shop"
+        });
+      }
     }
   },
   components: {},
@@ -2025,9 +2033,17 @@ __webpack_require__.r(__webpack_exports__);
           title: "Signed in successfully"
         });
 
-        _this.$router.push({
-          name: "home"
-        });
+        if (localStorage.getItem("role") == "admin") {
+          _this.$router.push({
+            name: "home"
+          });
+        }
+
+        if (localStorage.getItem("role") == "client") {
+          _this.$router.push({
+            name: "shop"
+          });
+        }
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
         var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().mixin({
@@ -4703,8 +4719,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       products: [],
-      searchTerm: "",
-      style: ""
+      searchTerm: ""
     };
   },
   computed: {
@@ -4728,8 +4743,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }
 }, "created", function created() {
   this.allProduct();
-  var cssElement = document.getElementsByTagName("head");
-  cssElement.remove();
 }));
 
 /***/ }),
@@ -5371,7 +5384,7 @@ var AppStorage = /*#__PURE__*/function () {
   }, {
     key: "storeUser",
     value: function storeUser(user) {
-      localStorage.setItem('user', user);
+      localStorage.setItem('role', user);
     }
   }, {
     key: "store",
@@ -5383,7 +5396,7 @@ var AppStorage = /*#__PURE__*/function () {
     key: "clear",
     value: function clear() {
       localStorage.removeItem('token');
-      localStorage.removeItem('user');
+      localStorage.removeItem('role');
     }
   }, {
     key: "getToken",
@@ -5393,7 +5406,7 @@ var AppStorage = /*#__PURE__*/function () {
   }, {
     key: "getUser",
     value: function getUser() {
-      localStorage.getItem('user');
+      localStorage.getItem('role');
     }
   }]);
 
@@ -5564,7 +5577,7 @@ var User = /*#__PURE__*/function () {
     key: "responseAfterlogin",
     value: function responseAfterlogin(res) {
       var access_token = res.data.access_token;
-      var username = res.data.name;
+      var username = res.data.role;
 
       if (_Token__WEBPACK_IMPORTED_MODULE_0__.default.isValid(access_token)) {
         _AppStorage__WEBPACK_IMPORTED_MODULE_1__.default.store(access_token, username);
@@ -5590,7 +5603,7 @@ var User = /*#__PURE__*/function () {
     key: "name",
     value: function name() {
       if (this.loggedIn()) {
-        return localStorage.getItem('user');
+        return localStorage.getItem('role');
       }
     }
   }, {
@@ -5607,7 +5620,7 @@ var User = /*#__PURE__*/function () {
     key: "clearToken",
     value: function clearToken() {
       localStorage.removeItem('token');
-      localStorage.removeItem('user');
+      localStorage.removeItem('role');
     }
   }]);
 
