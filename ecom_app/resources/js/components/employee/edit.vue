@@ -177,7 +177,7 @@
 import Swal from "sweetalert2";
 
 export default {
-  created() {
+  beforeMount() {
     if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({ name: "/" });
     }

@@ -29,6 +29,8 @@ let editproduct = require('./components/product/edit.vue').default;
 
 //Product component
 let sotreshopping = require('./components/shopping/index.vue').default;
+let shoppingcart = require('./components/shopping/cart.vue').default;
+let shoppingcorder = require('./components/shopping/order.vue').default;
 
 export const routes = [
     { path: '/', component: login, name : '/' },
@@ -59,6 +61,8 @@ export const routes = [
 
       //Shopping routes
     { path: '/shop', component: sotreshopping, name : 'shop' },
+    { path: '/cart', component: shoppingcart, name : 'cart' },
+    { path: '/order', component: shoppingcorder, name : 'order' },
   ]
   
   

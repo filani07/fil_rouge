@@ -85,11 +85,6 @@
 import Swal from "sweetalert2";
 
 export default {
-  created() {
-    if (!User.loggedIn() || User.role() === "client") {
-      this.$router.push({ name: "/" });
-    }
-  },
   components: {},
   data() {
     return {
@@ -139,6 +134,9 @@ export default {
     },
   },
   created() {
+    if (!User.loggedIn() || User.role() === "client") {
+      this.$router.push({ name: "/" });
+    }
     this.allProduct();
   },
 };

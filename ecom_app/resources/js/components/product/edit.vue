@@ -113,9 +113,11 @@
                             rows="3"
                           ></textarea>
 
-                          <small class="text-danger" v-if="errors.description">{{
-                            errors.description[0]
-                          }}</small>
+                          <small
+                            class="text-danger"
+                            v-if="errors.description"
+                            >{{ errors.description[0] }}</small
+                          >
                         </div>
 
                         <div class="col-md-4">

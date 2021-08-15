@@ -88,7 +88,6 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -108,12 +107,19 @@ class CartController extends Controller
         $cart = DB::table('carts')
             ->join('products', 'carts.product_id', 'products.id')
             ->join('orders', 'carts.order_id', 'orders.id')
-            ->select('products.*')
+            ->select('carts.id', 'products.*')
             ->where('orders.status', 'pending')
             ->where('orders.user_id', $request->user_id)
             ->orderBy('products.id', 'DESC')
             ->get();
 
-        return response()->json([$cart, 'cartItem' => $cart->count()]);
+        return response()->json([$cart, 'cartItem' => $cart->count(), 'total' => $cart->sum('buying_price')]);
+    }
+
+    public function confirmCart(Request $request)
+    {
+        $order = Order::where('status', 'pending')->where('user_id', $request->user_id)->first();
+        $order->update(array('status' => 'confirm'));
+        $order->save();
     }
 }

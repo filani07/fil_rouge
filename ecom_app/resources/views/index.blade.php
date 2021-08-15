@@ -17,7 +17,7 @@
     <div id="app">
         <div id="wrapper">
             <nav id="sidebar" style="display: none"
-                v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/shop' ||  $route.path==='/forget' ? flase : true">
+                v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/order' || $route.path==='/cart' || $route.path==='/shop' ||  $route.path==='/forget' ? flase : true">
                 <!-- Sidebar -->
                 <ul class=" navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
                     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -106,7 +106,7 @@
                 <div id="content">
                     <!-- TopBar -->
                     <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" id="topbar"
-                        v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/shop' ||  $route.path==='/forget' ? flase : true"
+                        v-show="$route.path === '/' ||  $route.path==='/register' || $route.path==='/order' || $route.path==='/cart' || $route.path==='/shop' ||  $route.path==='/forget' ? flase : true"
                         style="display: none">
                         <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
