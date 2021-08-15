@@ -30,6 +30,11 @@ Route::group([
 });
 
 
+// Route::prefix('Api')->group(function () {
+//     Route::get('pending', [OrderController::class, 'pending']);
+// });
+
+
 Route::apiResource('employee', EmployeeController::class);
 Route::apiResource('supplier', SupplierController::class);
 Route::apiResource('category', CategoryController::class);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class CartController extends Controller
@@ -27,13 +28,22 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+
         $validateData = $request->validate(
             [
                 'product_id' => 'required',
-                'order_id' => 'required',
             ]
         );
-        Cart::create($request->all());
+
+
+        $order = DB::table('orders')->where('status', 'pending')->first();
+        $order_id = $order->id;
+
+        $Cart = new Cart;
+        $Cart->product_id = $request->product_id;
+        $Cart->order_id = $request->input('order_id', $order_id);
+
+        $Cart->save();
     }
 
     /**
