@@ -18,6 +18,8 @@ class CartController extends Controller
      */
     public function index()
     {
+
+
         $cart = Cart::all();
         return response()->json($cart);
     }
@@ -98,5 +100,20 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function showcart(Request $request)
+    {
+        $cart = DB::table('carts')
+            ->join('products', 'carts.product_id', 'products.id')
+            ->join('orders', 'carts.order_id', 'orders.id')
+            ->select('products.*')
+            ->where('orders.status', 'pending')
+            ->where('orders.user_id', $request->user_id)
+            ->orderBy('products.id', 'DESC')
+            ->get();
+
+        return response()->json([$cart, 'cartItem' => $cart->count()]);
     }
 }
