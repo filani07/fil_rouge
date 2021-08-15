@@ -49,13 +49,20 @@ class CartController extends Controller
             $Cart->save();
         } else {
 
-
             $Order = new Order;
             $today = date("Y-m-d");
             $Order->user_id = $request->user_id;
             $Order->status = $request->input('status', 'pending');
             $Order->date = $request->input('date', $today);
             $Order->save();
+
+
+            $Cart = new Cart;
+            $order_id = $Order->id;
+            $Cart->product_id = $request->product_id;
+            $Cart->order_id = $request->input('order_id', $order_id);
+
+            $Cart->save();
         }
     }
 
