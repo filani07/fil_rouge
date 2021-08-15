@@ -14,10 +14,10 @@ class AddRoleToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role');
             $table->string('phone');
             $table->string('gender');
             $table->string('address');
+            $table->string('role');
         });
     }
 
@@ -29,10 +29,10 @@ class AddRoleToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role');
-            $table->string('phone');
-            $table->string('gender');
-            $table->string('address');
+            $table->dropColumn('phone');
+            $table->dropColumn('gender');
+            $table->dropColumn('address');
+            $table->dropColumn('role');
         });
     }
 }
