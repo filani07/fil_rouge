@@ -18,6 +18,8 @@ class OrderController extends Controller
     public function index()
     {
         $order = Order::all();
+        // $order = DB::table('orders')->where('status', 'pending')->first();
+
         return response()->json($order);
     }
 
@@ -32,8 +34,8 @@ class OrderController extends Controller
 
         $Order = new Order;
         $today = date("Y-m-d");
-        // $user_id = Auth::user()->id;
-        $Order->user_id = $request->input('user_id', 14);
+
+        $Order->user_id = $request->user_id;
         $Order->status = $request->input('status', 'pending');
         $Order->date = $request->input('date', $today);
 
