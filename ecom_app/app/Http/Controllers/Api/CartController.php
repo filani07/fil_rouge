@@ -98,7 +98,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::where('id', $id)->delete();
     }
 
 
@@ -107,10 +107,22 @@ class CartController extends Controller
         $cart = DB::table('carts')
             ->join('products', 'carts.product_id', 'products.id')
             ->join('orders', 'carts.order_id', 'orders.id')
-            ->select('carts.id', 'products.*')
+            ->select(
+                'carts.id',
+                'products.product_name',
+                'products.product_code',
+                'products.description',
+                'products.buying_price',
+                'products.selling_price',
+                'products.buying_date',
+                'products.image',
+                'products.product_quantity',
+                'products.created_at',
+                'products.updated_at',
+            )
             ->where('orders.status', 'pending')
             ->where('orders.user_id', $request->user_id)
-            ->orderBy('products.id', 'DESC')
+            ->orderBy('products.created_at', 'DESC')
             ->get();
 
         return response()->json([$cart, 'cartItem' => $cart->count(), 'total' => $cart->sum('selling_price')]);

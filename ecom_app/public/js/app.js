@@ -4647,6 +4647,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -4793,6 +4795,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
@@ -4805,6 +4873,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {},
+  //   .then(({ data }) => (this.carts = data))
   methods: {
     allCart: function allCart() {
       var _this = this;
@@ -4814,19 +4883,29 @@ __webpack_require__.r(__webpack_exports__);
         return _this.carts = data;
       })["catch"](function (err) {});
     },
-    UserCart: function UserCart() {
+    deleteCart: function deleteCart(id) {
       var _this2 = this;
 
-      axios.post("/api/getCartUser", this.form).then(function (_ref2) {
+      axios["delete"]("/api/cart/" + id).then(function (_ref2) {
         var data = _ref2.data;
-        return _this2.Cartuser = data;
+        _this2.carts = data;
+
+        _this2.allCart();
+      })["catch"](function (err) {});
+    },
+    UserCart: function UserCart() {
+      var _this3 = this;
+
+      axios.post("/api/getCartUser", this.form).then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.Cartuser = data;
       })["catch"](function (err) {});
     },
     MakePurchase: function MakePurchase() {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post("/api/confirmCart", this.form).then(function () {
-        _this3.$router.push({
+        _this4.$router.push({
           name: "order"
         });
       })["catch"](function (err) {});
@@ -4907,12 +4986,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
     return {
       products: [],
-      searchTerm: ""
+      searchTerm: "",
+      form: {
+        user_id: User.id(),
+        product_id: null
+      }
     };
   },
   computed: {
@@ -4931,6 +5018,16 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/product").then(function (_ref) {
         var data = _ref.data;
         return _this2.products = data;
+      })["catch"](function (err) {});
+    },
+    AddTocart: function AddTocart(id) {
+      var _this3 = this;
+
+      this.form.product_id = id;
+      axios.post("/api/cart", this.form).then(function () {
+        _this3.$router.push({
+          name: "shop"
+        });
       })["catch"](function (err) {});
     }
   },
@@ -54348,12 +54445,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _vm.carts.cartItem == 0
       ? _c("div", { staticClass: "container-fluid mt-100" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "card" }, [
-                _vm._m(0),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body cart" }, [
                   _c(
@@ -54369,9 +54468,9 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _vm._m(2),
                       _vm._v(" "),
-                      _c("h4", [_vm._v("Add something to make me happy :)")]),
+                      _c("h4", [_vm._v("Add something to your cart :)")]),
                       _vm._v(" "),
                       _c(
                         "router-link",
@@ -54403,7 +54502,7 @@ var render = function() {
                       staticClass: "table table-borderless table-shopping-cart"
                     },
                     [
-                      _vm._m(2),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -54449,7 +54548,29 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _vm._m(3, true)
+                            _c(
+                              "td",
+                              { staticClass: "text-right d-none d-md-block" },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "btn btn-light",
+                                    attrs: { href: "", "data-abc": "true" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.deleteCart(cart.id)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                      Remove\n                    "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
                           ])
                         }),
                         0
@@ -54517,7 +54638,9 @@ var render = function() {
                     _c("dt", [_vm._v("Total price:")]),
                     _vm._v(" "),
                     _c("dd", { staticClass: "text-right text-dark b ml-3" }, [
-                      _c("strong", [_vm._v("$" + _vm._s(_vm.carts.total))])
+                      _c("strong", [
+                        _vm._v("$" + _vm._s(_vm.carts.total.toFixed(2)))
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
@@ -54542,6 +54665,135 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-lg navbar-dark bg-dark" },
+      [
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _vm._v("Navbar")
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "navbar-toggler",
+            attrs: {
+              type: "button",
+              "data-toggle": "collapse",
+              "data-target": "#navbarSupportedContent",
+              "aria-controls": "navbarSupportedContent",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation"
+            }
+          },
+          [_c("span", { staticClass: "navbar-toggler-icon" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarSupportedContent" }
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav mr-auto" }, [
+              _c("li", { staticClass: "nav-item active" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Home "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Link")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link dropdown-toggle",
+                    attrs: {
+                      href: "#",
+                      id: "navbarDropdown",
+                      role: "button",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  },
+                  [_vm._v("\n            Dropdown\n          ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu",
+                    attrs: { "aria-labelledby": "navbarDropdown" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Action")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Another action")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "dropdown-divider" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Something else here")]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link disabled", attrs: { href: "#" } },
+                  [_vm._v("Disabled")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("form", { staticClass: "form-inline my-2 my-lg-0" }, [
+              _c("input", {
+                staticClass: "form-control mr-sm-2",
+                attrs: {
+                  type: "search",
+                  placeholder: "Search",
+                  "aria-label": "Search"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-success my-2 my-sm-0",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("\n          Search\n        ")]
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -54571,21 +54823,6 @@ var staticRenderFns = [
           attrs: { scope: "col", width: "200" }
         })
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { staticClass: "text-right d-none d-md-block" }, [
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-light",
-          attrs: { href: "", "data-abc": "true" }
-        },
-        [_vm._v("\n                      Remove")]
-      )
     ])
   }
 ]
@@ -54672,7 +54909,22 @@ var render = function() {
                   _vm._v("34 reviews")
                 ]),
                 _vm._v(" "),
-                _vm._m(1, true)
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn bg-cart",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.AddTocart(product.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-cart-plus mr-2" }),
+                    _vm._v(" Add to cart\n          ")
+                  ]
+                )
               ])
             ])
           ])
@@ -54696,19 +54948,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("i", { staticClass: "fa fa-star star" })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn bg-cart", attrs: { type: "button" } },
-      [
-        _c("i", { staticClass: "fa fa-cart-plus mr-2" }),
-        _vm._v(" Add to cart\n          ")
-      ]
-    )
   }
 ]
 render._withStripped = true

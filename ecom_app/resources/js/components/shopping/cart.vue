@@ -1,5 +1,65 @@
 <template >
   <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
     <div class="container-fluid mt-100" v-if="carts.cartItem == 0">
       <div class="row">
         <div class="col-md-12">
@@ -16,7 +76,7 @@
                   class="img-fluid mb-4 mr-3"
                 />
                 <h3><strong>Your Cart is Empty</strong></h3>
-                <h4>Add something to make me happy :)</h4>
+                <h4>Add something to your cart :)</h4>
                 <router-link
                   to="/shop"
                   class="btn btn-primary cart-btn-transform m-3"
@@ -69,9 +129,14 @@
                       </div>
                     </td>
                     <td class="text-right d-none d-md-block">
-                      <a href="" class="btn btn-light" data-abc="true">
-                        Remove</a
+                      <div
+                        href=""
+                        class="btn btn-light"
+                        data-abc="true"
+                        @click="deleteCart(cart.id)"
                       >
+                        Remove
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -122,7 +187,7 @@
               <dl class="dlist-align">
                 <dt>Total price:</dt>
                 <dd class="text-right text-dark b ml-3">
-                  <strong>${{ carts.total }}</strong>
+                  <strong>${{ carts.total.toFixed(2) }}</strong>
                 </dd>
               </dl>
               <hr />
@@ -145,6 +210,8 @@
 
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   components: {},
   data() {
@@ -159,12 +226,23 @@ export default {
   },
 
   computed: {},
+  //   .then(({ data }) => (this.carts = data))
 
   methods: {
     allCart() {
       axios
         .post("/api/showcart", this.form)
         .then(({ data }) => (this.carts = data))
+        .catch((err) => {});
+    },
+
+    deleteCart(id) {
+      axios
+        .delete("/api/cart/" + id)
+        .then(({ data }) => {
+          this.carts = data;
+          this.allCart();
+        })
         .catch((err) => {});
     },
 

@@ -37,7 +37,11 @@
               <i class="fa fa-star star"></i> <i class="fa fa-star star"></i>
             </div>
             <div class="text-muted mb-3">34 reviews</div>
-            <button type="button" class="btn bg-cart">
+            <button
+              type="button"
+              class="btn bg-cart"
+              @click="AddTocart(product.id)"
+            >
               <i class="fa fa-cart-plus mr-2"></i> Add to cart
             </button>
           </div>
@@ -55,6 +59,10 @@ export default {
     return {
       products: [],
       searchTerm: "",
+      form: {
+        user_id: User.id(),
+        product_id: null,
+      },
     };
   },
 
@@ -71,6 +79,15 @@ export default {
       axios
         .get("/api/product")
         .then(({ data }) => (this.products = data))
+        .catch((err) => {});
+    },
+    AddTocart(id) {
+      this.form.product_id = id;
+      axios
+        .post("/api/cart", this.form)
+        .then(() => {
+          this.$router.push({ name: "shop" });
+        })
         .catch((err) => {});
     },
   },
