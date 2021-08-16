@@ -60,7 +60,7 @@
           <li class="nav-item">
             <a href="#!" class="nav-link waves-effect"> Contact </a>
           </li>
-          <li class="nav-item pl-2 mb-2 mb-md-0">
+          <li class="nav-item pl-2 mb-2 mb-md-0" v-if="userBool">
             <router-link
               to="/logout"
               type="button"
@@ -69,6 +69,28 @@
                 waves-effect waves-light
               "
               >Logout</router-link
+            >
+          </li>
+          <li class="nav-item pl-2 mb-2 mb-md-0" v-if="!userBool">
+            <router-link
+              to="/"
+              type="button"
+              class="
+                btn btn-outline-info btn-md btn-rounded btn-navbar
+                waves-effect waves-light
+              "
+              >Login</router-link
+            >
+          </li>
+          <li class="nav-item pl-2 mb-2 mb-md-0" v-if="!userBool">
+            <router-link
+              to="/register"
+              type="button"
+              class="
+                btn btn-outline-info btn-md btn-rounded btn-navbar
+                waves-effect waves-light
+              "
+              >Register</router-link
             >
           </li>
         </ul>
@@ -132,6 +154,8 @@
 
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   components: {},
   data() {
@@ -139,6 +163,7 @@ export default {
       products: [],
       carts: null,
       searchTerm: "",
+      userBool: localStorage.getItem("token"),
       form: {
         user_id: User.id(),
         product_id: null,
@@ -169,6 +194,18 @@ export default {
     },
     AddTocart(id) {
       this.form.product_id = id;
+      if (!this.userBool) {
+        Swal.fire({
+          title: "Please create an account to Make Purchase",
+          // text: "Please create an account to Make Purchase",
+          icon: "info",
+          showCancelButton: false,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "OK!",
+        });
+      }
+
       axios
         .post("/api/cart", this.form)
         .then(() => {
@@ -178,9 +215,9 @@ export default {
     },
   },
   created() {
-    if (!User.loggedIn() || User.role() === "admin") {
-      this.$router.push({ name: "/" });
-    }
+    // if (!User.loggedIn() || User.role() === "admin") {
+    //   this.$router.push({ name: "/" });
+    // }
     this.allProduct();
     this.allCart();
   },
