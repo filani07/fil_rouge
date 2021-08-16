@@ -1,65 +1,55 @@
 <template >
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light border rounded">
+      <a class="navbar-brand" href="#!">
+        <img src="assets/img/logo/logo1.png" height="30" alt="mdb logo" />
+      </a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="basicExampleNav11">
+        <!-- Right -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <router-link to="/cart" class="nav-link navbar-link-2 waves-effect">
+              <span
+                class="badge badge-pill red text-light"
+                style="background-color: red"
+                >{{ carts.cartItem }}</span
+              >
+              <i class="fas fa-shopping-cart pl-0"></i>
+            </router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link to="/shop" class="nav-link waves-effect">
+              Shop
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <router-link to="/order" class="nav-link waves-effect">
+              Order
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a href="#!" class="nav-link waves-effect"> Contact </a>
+          </li>
+          <li class="nav-item pl-2 mb-2 mb-md-0">
+            <router-link
+              to="/logout"
+              type="button"
+              class="
+                btn btn-outline-info btn-md btn-rounded btn-navbar
+                waves-effect waves-light
+              "
+              >Logout</router-link
+            >
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
       </div>
+      <!-- Links -->
     </nav>
+    <!-- Navbar -->
     <div class="container-fluid mt-100" v-if="carts.cartItem == 0">
       <div class="row">
         <div class="col-md-12">
@@ -76,7 +66,7 @@
                   class="img-fluid mb-4 mr-3"
                 />
                 <h3><strong>Your Cart is Empty</strong></h3>
-                <h4>Add something to your cart :)</h4>
+                <h4>Add something to your :)</h4>
                 <router-link
                   to="/shop"
                   class="btn btn-primary cart-btn-transform m-3"
