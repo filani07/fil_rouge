@@ -5139,17 +5139,131 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
     return {
       carts: null,
+      Cartuser: null,
       form: {
         user_id: User.id()
       }
     };
   },
   computed: {},
+  //   .then(({ data }) => (this.carts = data))
   methods: {
     allCart: function allCart() {
       var _this = this;
@@ -5159,12 +5273,12 @@ __webpack_require__.r(__webpack_exports__);
         return _this.carts = data;
       })["catch"](function (err) {});
     },
-    MakePurchase: function MakePurchase() {
+    UserCart: function UserCart() {
       var _this2 = this;
 
-      axios.post("/api/confirmCart", this.form).then(function (_ref2) {
+      axios.post("/api/getCartUser", this.form).then(function (_ref2) {
         var data = _ref2.data;
-        return _this2.carts = data;
+        return _this2.Cartuser = data;
       })["catch"](function (err) {});
     }
   },
@@ -5176,6 +5290,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     this.allCart();
+    this.UserCart();
   }
 });
 
@@ -54520,7 +54635,19 @@ var render = function() {
       "nav",
       { staticClass: "navbar navbar-expand-md navbar-light border rounded" },
       [
-        _vm._m(0),
+        _c(
+          "router-link",
+          { staticClass: "navbar-brand", attrs: { to: "/shop" } },
+          [
+            _c("img", {
+              attrs: {
+                src: "assets/img/logo/logo1.png",
+                height: "38",
+                alt: "MyEcom logo"
+              }
+            })
+          ]
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -54589,7 +54716,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "li",
@@ -54610,7 +54737,8 @@ var render = function() {
             ])
           ]
         )
-      ]
+      ],
+      1
     ),
     _vm._v(" "),
     _vm.carts.cartItem == 0
@@ -54618,7 +54746,7 @@ var render = function() {
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "card" }, [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body cart" }, [
                   _c(
@@ -54634,7 +54762,7 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c("h4", [_vm._v("Add something to your :)")]),
                       _vm._v(" "),
@@ -54668,7 +54796,7 @@ var render = function() {
                       staticClass: "table table-borderless table-shopping-cart"
                     },
                     [
-                      _vm._m(4),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -54835,20 +54963,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#!" } }, [
-      _c("img", {
-        attrs: {
-          src: "assets/img/logo/logo1.png",
-          height: "30",
-          alt: "mdb logo"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
       _c("a", { staticClass: "nav-link waves-effect", attrs: { href: "#!" } }, [
         _vm._v(" Contact ")
@@ -54914,7 +55028,19 @@ var render = function() {
       "nav",
       { staticClass: "navbar navbar-expand-md navbar-light border rounded" },
       [
-        _vm._m(0),
+        _c(
+          "router-link",
+          { staticClass: "navbar-brand", attrs: { to: "/shop" } },
+          [
+            _c("img", {
+              attrs: {
+                src: "assets/img/logo/logo1.png",
+                height: "38",
+                alt: "MyEcom logo"
+              }
+            })
+          ]
+        ),
         _vm._v(" "),
         _c(
           "form",
@@ -54922,7 +55048,7 @@ var render = function() {
           [
             _c("div", { staticClass: "input-group mb-0" }, [
               _c("div", { staticClass: "input-group-prepend" }, [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -55026,7 +55152,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "li",
@@ -55047,7 +55173,8 @@ var render = function() {
             ])
           ]
         )
-      ]
+      ],
+      1
     ),
     _vm._v(" "),
     _c(
@@ -55108,7 +55235,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(3, true),
+                    _vm._m(2, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "text-muted mb-3" }, [
                       _vm._v("34 reviews")
@@ -55142,20 +55269,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#!" } }, [
-      _c("img", {
-        attrs: {
-          src: "assets/img/logo/logo1.png",
-          height: "30",
-          alt: "mdb logo"
-        }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -55216,14 +55329,239 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-md navbar-light border rounded" },
+      [
+        _c(
+          "router-link",
+          { staticClass: "navbar-brand", attrs: { to: "/shop" } },
+          [
+            _c("img", {
+              attrs: {
+                src: "assets/img/logo/logo1.png",
+                height: "38",
+                alt: "MyEcom logo"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "basicExampleNav11" }
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link navbar-link-2 waves-effect",
+                      attrs: { to: "/cart" }
+                    },
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "badge badge-pill red text-light",
+                          staticStyle: { "background-color": "red" }
+                        },
+                        [_vm._v(_vm._s(_vm.carts.cartItem))]
+                      ),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-shopping-cart pl-0" })
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link waves-effect",
+                      attrs: { to: "/shop" }
+                    },
+                    [_vm._v("\n            Shop\n          ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link waves-effect",
+                      attrs: { to: "/order" }
+                    },
+                    [_vm._v("\n            Order\n          ")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "nav-item pl-2 mb-2 mb-md-0" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "\n              btn btn-outline-info btn-md btn-rounded btn-navbar\n              waves-effect waves-light\n            ",
+                      attrs: { to: "/logout", type: "button" }
+                    },
+                    [_vm._v("Logout")]
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("order page")])])
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "nav-link waves-effect", attrs: { href: "#!" } }, [
+        _vm._v(" Contact ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container my-5" }, [
+      _c("div", { staticClass: "d-flex justify-content-center row" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "p-3 bg-white rounded" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("h1", { staticClass: "text-uppercase" }, [
+                  _vm._v("Invoice")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "billed" }, [
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-bold text-uppercase" },
+                    [_vm._v("Billed:")]
+                  ),
+                  _c("span", { staticClass: "ml-1" }, [
+                    _vm._v("Jasper Kendrick")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "billed" }, [
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-bold text-uppercase" },
+                    [_vm._v("Date:")]
+                  ),
+                  _c("span", { staticClass: "ml-1" }, [_vm._v("May 13, 2020")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "billed" }, [
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-bold text-uppercase" },
+                    [_vm._v("Order ID:")]
+                  ),
+                  _c("span", { staticClass: "ml-1" }, [_vm._v("#1345345")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 text-right mt-3" }, [
+                _c("h4", { staticClass: "text-danger mb-0" }, [
+                  _vm._v("Rae jones")
+                ]),
+                _vm._v(" "),
+                _c("span", [_vm._v("bbbootstrap.com")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-3" }, [
+              _c("div", { staticClass: "table-responsive" }, [
+                _c("table", { staticClass: "table" }, [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Product")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Unit")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Price")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Total")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("Custom oil painting (24 X 36 in.)")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("10")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("34")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("340")])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", [
+                        _vm._v("Digital illustraion paint(8.5 X 11 in.)")
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("12")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("50")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("600")])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td"),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("Total")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("940")])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

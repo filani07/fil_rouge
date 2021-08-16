@@ -75,4 +75,60 @@ class OrderController extends Controller
     {
         //
     }
+
+    // public function confirmedOrder(Request $request)
+    // {
+    //     $order = DB::table('carts')
+    //         ->join('products', 'carts.product_id', 'products.id')
+    //         ->join('orders', 'carts.order_id', 'orders.id')
+    //         ->select(
+    //             'orders.id',
+    //             'products.product_name',
+    //             'products.product_code',
+    //             'products.description',
+    //             'products.selling_price',
+    //             'products.image',
+    //             'products.product_quantity',
+    //             'products.created_at',
+    //         )
+    //         ->where('orders.status', 'confirm')
+    //         ->where('orders.user_id', $request->user_id)
+    //         ->orderBy('orders.id', 'DESC')
+    //         ->get();
+
+    //     // $newArry = array();
+
+    //     // foreach ($order as $innerArray) {
+    //     // foreach ($order as $key => $value) {
+    //     //     if ($key = 18) {
+    //     //         array_push($newArry,  [$key => $value]);
+    //     //     }
+    //     //     }
+    //     // }
+
+
+    //     return response()->json($order);
+    //     // return response()->json([$order, 'OrderItem' => $order->count(), 'total' => $order->sum('selling_price')]);
+    // }
+
+
+
+
+    public function confirmedOrder(Request $request)
+    {
+        $order = DB::table('orders')
+            ->join('carts', 'carts.order_id', 'orders.id')
+            ->select(
+                DB::raw('17,orders.id '),
+                'carts.product_id',
+            )
+            ->where('orders.status', 'confirm')
+            ->where('orders.user_id', $request->user_id)
+            ->orderBy('orders.id', 'DESC')
+            ->get();
+
+        return response()->json($order);
+
+        // return response()->json([$order, 'OrderItem' => $order->count(), 'total' => $order->sum('selling_price')]);
+    }
 }

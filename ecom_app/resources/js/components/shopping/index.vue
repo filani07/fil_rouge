@@ -2,9 +2,9 @@
   <div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light border rounded">
-      <a class="navbar-brand" href="#!">
-        <img src="assets/img/logo/logo1.png" height="30" alt="mdb logo" />
-      </a>
+      <router-link class="navbar-brand" to="/shop">
+        <img src="assets/img/logo/logo1.png" height="38" alt="MyEcom logo" />
+      </router-link>
       <form class="navbar-search pl-0 ml-auto" action="">
         <div class="input-group mb-0">
           <div class="input-group-prepend">
