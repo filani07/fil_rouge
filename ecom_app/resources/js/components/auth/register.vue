@@ -1,84 +1,167 @@
 <template >
   <div>
-    <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="card shadow-sm my-5">
-          <div class="card-body p-0">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="login-form">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Register</h1>
-                  </div>
-                  <form class="user" @submit.prevent="signup">
+    <div class="my-login-page">
+      <section class="h-100">
+        <div class="container h-100">
+          <div class="row justify-content-md-center h-100">
+            <div class="card-wrapper">
+              <div class="brand">
+                <img
+                  src="assets/img/logo/logo.png"
+                  alt="bootstrap 4 login page"
+                />
+              </div>
+              <div class="card fat">
+                <div class="card-body">
+                  <h4 class="card-title">Register</h4>
+                  <form
+                    method="POST"
+                    class="my-login-validation"
+                    novalidate=""
+                    @submit.prevent="signup"
+                  >
                     <div class="form-group">
+                      <label for="name">Name</label>
                       <input
+                        id="name"
                         type="text"
                         class="form-control"
-                        id="exampleInputFirstName"
-                        placeholder="Enter Your Full Name"
+                        name="name"
                         v-model="form.name"
+                        required
+                        autofocus
                       />
                       <small class="text-danger" v-if="errors.name">{{
                         errors.name[0]
                       }}</small>
+                      <div class="invalid-feedback">What's your name?</div>
                     </div>
 
                     <div class="form-group">
+                      <label for="email">E-Mail Address</label>
                       <input
+                        id="email"
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter Email Address"
+                        name="email"
                         v-model="form.email"
+                        required
                       />
                       <small class="text-danger" v-if="errors.email">{{
                         errors.email[0]
                       }}</small>
+                      <div class="invalid-feedback">Your email is invalid</div>
                     </div>
+
                     <div class="form-group">
+                      <label for="phone">Phone Number</label>
                       <input
+                        id="phone"
+                        type="number"
+                        class="form-control"
+                        name="phone"
+                        v-model="form.phone"
+                        required
+                        autofocus
+                      />
+                      <small class="text-danger" v-if="errors.phone">{{
+                        errors.phone[0]
+                      }}</small>
+                      <div class="invalid-feedback">What's your phone?</div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="address">Your Address</label>
+                      <input
+                        id="address"
+                        type="text"
+                        class="form-control"
+                        name="address"
+                        v-model="form.address"
+                        required
+                        autofocus
+                      />
+                      <small class="text-danger" v-if="errors.address">{{
+                        errors.address[0]
+                      }}</small>
+                      <div class="invalid-feedback">What's your address?</div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input
+                        id="password"
                         type="password"
                         class="form-control"
-                        id="exampleInputPassword"
-                        placeholder="Password"
+                        name="password"
                         v-model="form.password"
+                        required
+                        data-eye
                       />
                       <small class="text-danger" v-if="errors.password">{{
                         errors.password[0]
                       }}</small>
+                      <div class="invalid-feedback">Password is required</div>
                     </div>
+
                     <div class="form-group">
+                      <label for="password_confirmation"
+                        >Confirme Password</label
+                      >
                       <input
+                        id="password_confirmation"
                         type="password"
                         class="form-control"
-                        id="exampleInputPasswordRepeat"
-                        placeholder="Confirme Password"
+                        name="password_confirmation"
                         v-model="form.password_confirmation"
+                        required
+                        data-eye
                       />
                       <small class="text-danger" v-if="errors.password">{{
                         errors.password[0]
                       }}</small>
+                      <small class="text-danger" v-if="errors.password">{{
+                        errors.password[0]
+                      }}</small>
+                      <div class="invalid-feedback">Password is required</div>
                     </div>
+
                     <div class="form-group">
+                      <div class="custom-checkbox custom-control">
+                        <input
+                          type="checkbox"
+                          name="agree"
+                          id="agree"
+                          class="custom-control-input"
+                          required=""
+                        />
+                        <label for="agree" class="custom-control-label"
+                          >I agree to the
+                          <a href="#">Terms and Conditions</a></label
+                        >
+                        <div class="invalid-feedback">
+                          You must agree with our Terms and Conditions
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group m-0">
                       <button type="submit" class="btn btn-primary btn-block">
                         Register
                       </button>
                     </div>
+                    <div class="mt-4 text-center">
+                      Already have an account?
+                      <router-link to="/">Login</router-link>
+                    </div>
                   </form>
-                  <div class="text-center">
-                    <router-link class="font-weight-bold small" to="/"
-                      >Already have an account?</router-link
-                    >
-                  </div>
-                  <div class="text-center"></div>
                 </div>
               </div>
+              <div class="footer">Copyright &copy; 2021 &mdash; MyEcom</div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -100,6 +183,8 @@ export default {
         email: null,
         password: null,
         name: null,
+        address: null,
+        phone: null,
         password: null,
         password_confirmation: null,
       },
@@ -138,4 +223,75 @@ export default {
 </script>
 
 <style scoped>
+body.my-login-page {
+  background-color: #f7f9fb;
+  font-size: 14px;
+}
+
+.my-login-page .brand {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+.my-login-page .brand img {
+  width: 100%;
+}
+
+.my-login-page .card-wrapper {
+  width: 550px;
+}
+
+.my-login-page .card {
+  border-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.my-login-page .card.fat {
+  padding: 10px;
+}
+
+.my-login-page .card .card-title {
+  margin-bottom: 30px;
+}
+
+.my-login-page .form-control {
+  border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+  width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+  padding: 12px 10px;
+}
+
+.my-login-page .footer {
+  margin: 40px 0;
+  color: #888;
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .my-login-page .card-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .my-login-page .card.fat {
+    padding: 0;
+  }
+
+  .my-login-page .card.fat .card-body {
+    padding: 15px;
+  }
+}
 </style>
