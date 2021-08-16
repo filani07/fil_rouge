@@ -5,7 +5,33 @@
       <a class="navbar-brand" href="#!">
         <img src="assets/img/logo/logo1.png" height="30" alt="mdb logo" />
       </a>
-
+      <form class="navbar-search pl-0 ml-auto" action="">
+        <div class="input-group mb-0">
+          <div class="input-group-prepend">
+            <a
+              href="#!"
+              class="input-icon d-flex align-items-center"
+              type="button"
+              ><i class="fas fa-search text-white mx-3"></i
+            ></a>
+            <input
+              class="
+                form-control
+                white-text
+                rgba-black-light
+                border-0
+                z-depth-0
+                pl-5
+              "
+              style="border: solid black 1px; background-color: #e1ebe4"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+              v-model="searchTerm"
+            />
+          </div>
+        </div>
+      </form>
       <!-- Links -->
       <div class="collapse navbar-collapse" id="basicExampleNav11">
         <!-- Right -->

@@ -5033,6 +5033,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
@@ -54891,6 +54917,49 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c(
+          "form",
+          { staticClass: "navbar-search pl-0 ml-auto", attrs: { action: "" } },
+          [
+            _c("div", { staticClass: "input-group mb-0" }, [
+              _c("div", { staticClass: "input-group-prepend" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.searchTerm,
+                      expression: "searchTerm"
+                    }
+                  ],
+                  staticClass:
+                    "\n              form-control\n              white-text\n              rgba-black-light\n              border-0\n              z-depth-0\n              pl-5\n            ",
+                  staticStyle: {
+                    border: "solid black 1px",
+                    "background-color": "#e1ebe4"
+                  },
+                  attrs: {
+                    type: "text",
+                    placeholder: "Search",
+                    "aria-label": "Search"
+                  },
+                  domProps: { value: _vm.searchTerm },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.searchTerm = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
           "div",
           {
             staticClass: "collapse navbar-collapse",
@@ -54957,7 +55026,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "li",
@@ -55039,7 +55108,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(2, true),
+                    _vm._m(3, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "text-muted mb-3" }, [
                       _vm._v("34 reviews")
@@ -55086,6 +55155,19 @@ var staticRenderFns = [
         }
       })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "input-icon d-flex align-items-center",
+        attrs: { href: "#!", type: "button" }
+      },
+      [_c("i", { staticClass: "fas fa-search text-white mx-3" })]
+    )
   },
   function() {
     var _vm = this
