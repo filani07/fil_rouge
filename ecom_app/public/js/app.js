@@ -5251,6 +5251,102 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   data: function data() {
@@ -10999,6 +11095,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-6e1e32f6] {\r\n  margin: 0;\r\n  font-family: Roboto, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto,\r\n    \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\",\r\n    \"Segoe UI Symbol\", \"Noto Color Emoji\";\r\n  font-size: 0.8125rem;\r\n  font-weight: 400;\r\n  line-height: 1.5385;\r\n  color: #333;\r\n  text-align: left;\r\n  background-color: #2196f3;\n}\n.mt-50[data-v-6e1e32f6] {\r\n  margin-top: 50px;\n}\n.mb-50[data-v-6e1e32f6] {\r\n  margin-bottom: 50px;\n}\n.card[data-v-6e1e32f6] {\r\n  position: relative;\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-width: 0;\r\n  word-wrap: break-word;\r\n  background-color: #fff;\r\n  background-clip: border-box;\r\n  border: 1px solid rgba(0, 0, 0, 0.125);\r\n  border-radius: 0.1875rem;\n}\n.card-img-actions[data-v-6e1e32f6] {\r\n  position: relative;\n}\n.card-body[data-v-6e1e32f6] {\r\n  flex: 1 1 auto;\r\n  padding: 1.25rem;\r\n  text-align: center;\n}\n.card-img[data-v-6e1e32f6] {\r\n  width: 350px;\n}\n.star[data-v-6e1e32f6] {\r\n  color: red;\n}\n.bg-cart[data-v-6e1e32f6] {\r\n  background-color: orange;\r\n  color: #fff;\n}\n.bg-cart[data-v-6e1e32f6]:hover {\r\n  color: #fff;\n}\n.bg-buy[data-v-6e1e32f6] {\r\n  background-color: green;\r\n  color: #fff;\r\n  padding-right: 29px;\n}\n.bg-buy[data-v-6e1e32f6]:hover {\r\n  color: #fff;\n}\na[data-v-6e1e32f6] {\r\n  text-decoration: none !important;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-f22e191c] {\r\n  background-color: #eee;\n}\n.fs-12[data-v-f22e191c] {\r\n  font-size: 12px;\n}\n.fs-15[data-v-f22e191c] {\r\n  font-size: 15px;\n}\n.name[data-v-f22e191c] {\r\n  margin-bottom: -2px;\n}\n.product-details[data-v-f22e191c] {\r\n  margin-top: 13px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45354,6 +45474,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_id_f22e191c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_id_f22e191c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_id_f22e191c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/supplier/index.vue?vue&type=style&index=0&id=016e0e5a&scoped=true&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/supplier/index.vue?vue&type=style&index=0&id=016e0e5a&scoped=true&lang=css& ***!
@@ -49430,15 +49580,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _order_vue_vue_type_template_id_f22e191c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=f22e191c&scoped=true& */ "./resources/js/components/shopping/order.vue?vue&type=template&id=f22e191c&scoped=true&");
 /* harmony import */ var _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.vue?vue&type=script&lang=js& */ "./resources/js/components/shopping/order.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _order_vue_vue_type_style_index_0_id_f22e191c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& */ "./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__.default)(
   _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _order_vue_vue_type_template_id_f22e191c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _order_vue_vue_type_template_id_f22e191c_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -49973,6 +50125,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_6e1e32f6_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=style&index=0&id=6e1e32f6&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/index.vue?vue&type=style&index=0&id=6e1e32f6&scoped=true&lang=css&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& ***!
+  \*************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_order_vue_vue_type_style_index_0_id_f22e191c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/shopping/order.vue?vue&type=style&index=0&id=f22e191c&scoped=true&lang=css&");
 
 
 /***/ }),
@@ -55458,106 +55623,308 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container my-5" }, [
+    return _c("div", { staticClass: "container mt-5 mb-5" }, [
       _c("div", { staticClass: "d-flex justify-content-center row" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "p-3 bg-white rounded" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("h1", { staticClass: "text-uppercase" }, [
-                  _vm._v("Invoice")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "billed" }, [
-                  _c(
-                    "span",
-                    { staticClass: "font-weight-bold text-uppercase" },
-                    [_vm._v("Billed:")]
-                  ),
-                  _c("span", { staticClass: "ml-1" }, [
-                    _vm._v("Jasper Kendrick")
+        _c("div", { staticClass: "col-md-10" }, [
+          _c("div", { staticClass: "receipt bg-white p-3 rounded" }, [
+            _c("img", {
+              attrs: { src: "https://i.imgur.com/zCAnG06.png", width: "120" }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "mt-2 mb-3" }, [
+              _vm._v("Your order is confirmed!")
+            ]),
+            _vm._v(" "),
+            _c("h6", { staticClass: "name" }, [_vm._v("Hello John,")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "fs-12 text-black-50" }, [
+              _vm._v(
+                "your order has been confirmed and will be shipped in two\n            days"
+              )
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n              d-flex\n              flex-row\n              justify-content-between\n              align-items-center\n              order-details\n            "
+              },
+              [
+                _c("div", [
+                  _c("span", { staticClass: "d-block fs-12" }, [
+                    _vm._v("Order date")
+                  ]),
+                  _c("span", { staticClass: "font-weight-bold" }, [
+                    _vm._v("12 March 2020")
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "billed" }, [
-                  _c(
-                    "span",
-                    { staticClass: "font-weight-bold text-uppercase" },
-                    [_vm._v("Date:")]
-                  ),
-                  _c("span", { staticClass: "ml-1" }, [_vm._v("May 13, 2020")])
+                _c("div", [
+                  _c("span", { staticClass: "d-block fs-12" }, [
+                    _vm._v("Order number")
+                  ]),
+                  _c("span", { staticClass: "font-weight-bold" }, [
+                    _vm._v("OD44434324")
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "billed" }, [
-                  _c(
-                    "span",
-                    { staticClass: "font-weight-bold text-uppercase" },
-                    [_vm._v("Order ID:")]
-                  ),
-                  _c("span", { staticClass: "ml-1" }, [_vm._v("#1345345")])
+                _c("div", [
+                  _c("span", { staticClass: "d-block fs-12" }, [
+                    _vm._v("Payment method")
+                  ]),
+                  _c("span", { staticClass: "font-weight-bold" }, [
+                    _vm._v("Credit card")
+                  ]),
+                  _c("img", {
+                    staticClass: "ml-1 mb-1",
+                    attrs: {
+                      src: "https://i.imgur.com/ZZr3Yqj.png",
+                      width: "20"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("span", { staticClass: "d-block fs-12" }, [
+                    _vm._v("Shipping Address")
+                  ]),
+                  _c("span", { staticClass: "font-weight-bold text-success" }, [
+                    _vm._v("New Delhi")
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 text-right mt-3" }, [
-                _c("h4", { staticClass: "text-danger mb-0" }, [
-                  _vm._v("Rae jones")
-                ]),
-                _vm._v(" "),
-                _c("span", [_vm._v("bbbootstrap.com")])
-              ])
-            ]),
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "mt-3" }, [
-              _c("div", { staticClass: "table-responsive" }, [
-                _c("table", { staticClass: "table" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", [_vm._v("Product")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Unit")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Price")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Total")])
+            _c("hr"),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n              d-flex\n              justify-content-between\n              align-items-center\n              product-details\n            "
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "d-flex flex-row product-name-image" },
+                  [
+                    _c("img", {
+                      staticClass: "rounded",
+                      attrs: {
+                        src: "https://i.imgur.com/GsFeDLn.jpg",
+                        width: "80"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex flex-column justify-content-between ml-2"
+                      },
+                      [
+                        _c("div", [
+                          _c(
+                            "span",
+                            { staticClass: "d-block font-weight-bold p-name" },
+                            [_vm._v("Ralco formal shirts for men")]
+                          ),
+                          _c("span", { staticClass: "fs-12" }, [
+                            _vm._v("Clothes")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "fs-12" }, [
+                          _vm._v("Qty: 1pcs")
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-price" }, [
+                  _c("h5", [_vm._v("$70")])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "\n              d-flex\n              justify-content-between\n              align-items-center\n              product-details\n            "
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "d-flex flex-row product-name-image" },
+                  [
+                    _c("img", {
+                      staticClass: "rounded",
+                      attrs: {
+                        src: "https://i.imgur.com/b7Ve3fJ.jpg",
+                        width: "80"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex flex-column justify-content-between ml-2"
+                      },
+                      [
+                        _c("div", [
+                          _c(
+                            "span",
+                            { staticClass: "d-block font-weight-bold p-name" },
+                            [_vm._v("Ralco formal Belt for men")]
+                          ),
+                          _c("span", { staticClass: "fs-12" }, [
+                            _vm._v("Accessories")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "fs-12" }, [
+                          _vm._v("Qty: 1pcs")
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-price" }, [
+                  _c("h6", [_vm._v("$50")])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-5 amount row" }, [
+              _c(
+                "div",
+                { staticClass: "d-flex justify-content-center col-md-6" },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "https://i.imgur.com/AXdWCWr.gif",
+                      width: "250",
+                      height: "100"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6" }, [
+                _c("div", { staticClass: "billing" }, [
+                  _c("div", { staticClass: "d-flex justify-content-between" }, [
+                    _c("span", [_vm._v("Subtotal")]),
+                    _c("span", { staticClass: "font-weight-bold" }, [
+                      _vm._v("$120")
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("Custom oil painting (24 X 36 in.)")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("10")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("34")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("340")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [
-                        _vm._v("Digital illustraion paint(8.5 X 11 in.)")
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mt-2" },
+                    [
+                      _c("span", [_vm._v("Shipping fee")]),
+                      _c("span", { staticClass: "font-weight-bold" }, [
+                        _vm._v("$15")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mt-2" },
+                    [
+                      _c("span", [_vm._v("Tax")]),
+                      _c("span", { staticClass: "font-weight-bold" }, [
+                        _vm._v("$5")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mt-2" },
+                    [
+                      _c("span", { staticClass: "text-success" }, [
+                        _vm._v("Discount")
                       ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("12")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("50")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("600")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td"),
-                      _vm._v(" "),
-                      _c("td"),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Total")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("940")])
-                    ])
-                  ])
+                      _c(
+                        "span",
+                        { staticClass: "font-weight-bold text-success" },
+                        [_vm._v("$25")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "d-flex justify-content-between mt-1" },
+                    [
+                      _c("span", { staticClass: "font-weight-bold" }, [
+                        _vm._v("Total")
+                      ]),
+                      _c(
+                        "span",
+                        { staticClass: "font-weight-bold text-success" },
+                        [_vm._v("$165")]
+                      )
+                    ]
+                  )
                 ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "d-block" }, [
+              _vm._v("Expected delivery date")
+            ]),
+            _c("span", { staticClass: "font-weight-bold text-success" }, [
+              _vm._v("12 March 2020")
+            ]),
+            _c("span", { staticClass: "d-block mt-3 text-black-50 fs-15" }, [
+              _vm._v(
+                "We will be sending a shipping confirmation email when the item is\n            shipped!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "d-flex justify-content-between align-items-center footer"
+              },
+              [
+                _c("div", { staticClass: "thanks" }, [
+                  _c("span", { staticClass: "d-block font-weight-bold" }, [
+                    _vm._v("Thanks for shopping")
+                  ]),
+                  _c("span", [_vm._v("Amazon team")])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "d-flex flex-column justify-content-end align-items-end"
+                  },
+                  [
+                    _c("span", { staticClass: "d-block font-weight-bold" }, [
+                      _vm._v("Need Help?")
+                    ]),
+                    _c("span", [_vm._v("Call - 974493933")])
+                  ]
+                )
+              ]
+            )
           ])
         ])
       ])
