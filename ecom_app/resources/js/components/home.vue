@@ -231,7 +231,7 @@
                     <span class="badge badge-warning">Pending</span>
                   </td>
                   <td v-if="order.status == 'confirm'">
-                    <span class="badge badge-info">Confirmed</span>
+                    <span class="badge badge-success">Confirmed</span>
                   </td>
                   <td>
                     <button

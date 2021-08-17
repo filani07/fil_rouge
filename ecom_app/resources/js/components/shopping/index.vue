@@ -271,7 +271,7 @@ body {
 }
 
 .card-img {
-  width: 350px;
+  width: 200px;
 }
 
 .star {
