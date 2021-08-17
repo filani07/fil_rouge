@@ -20,7 +20,7 @@
                 v-show="$route.path === '/' ||  $route.path==='/register' ||  $route.path==='/order' || $route.path==='/cart' || $route.path==='/shop' ||  $route.path==='/forget' ? flase : true">
                 <!-- Sidebar -->
                 <ul class=" navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                         <div class="sidebar-brand-icon">
                             <img src="{{ asset('assets/img/logo/logo2.png') }}">
                         </div>
@@ -34,9 +34,7 @@
                         </router-link>
                     </li>
                     <hr class="sidebar-divider">
-                    <div class="sidebar-heading">
-                        Features
-                    </div>
+
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                             aria-expanded="true" aria-controls="collapseBootstrap">

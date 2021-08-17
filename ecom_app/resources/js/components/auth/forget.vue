@@ -5,12 +5,11 @@
         <div class="container h-100">
           <div class="row justify-content-md-center align-items-center h-100">
             <div class="card-wrapper">
-              <div class="brand">
-                <img
-                  src="assets/img/logo/logo.png"
-                  alt="bootstrap 4 login page"
-                />
-              </div>
+              <router-link to="/shop">
+                <div class="brand">
+                  <img src="assets/img/logo/logo.png" alt="logo" />
+                </div>
+              </router-link>
               <div class="card fat">
                 <div class="card-body">
                   <h4 class="card-title">Forgot Password</h4>
