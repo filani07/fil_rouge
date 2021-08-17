@@ -1,5 +1,109 @@
 <template >
   <div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Order Detail</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Order -->
+            <div class="containero">
+              <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                  <div class="receipt bg-white p-3 rounded">
+                    <hr />
+                    <div
+                      class="
+                        d-flex
+                        flex-row
+                        justify-content-between
+                        align-items-center
+                        order-details
+                      "
+                    >
+                      <div>
+                        <span class="d-block fs-12">Order date</span
+                        ><span class="font-weight-bold">{{
+                          ordersDetails.orderDate
+                        }}</span>
+                      </div>
+                    </div>
+                    <hr />
+                    <div
+                      class="
+                        d-flex
+                        justify-content-between
+                        align-items-center
+                        product-details
+                        mt-4
+                      "
+                      v-for="orderD in ordersDetails[0]"
+                      :key="orderD.id"
+                    >
+                      <div class="d-flex flex-row product-name-image">
+                        <img class="rounded" :src="orderD.image" width="80" />
+                        <div
+                          class="
+                            d-flex
+                            flex-column
+                            justify-content-between
+                            ml-2
+                          "
+                        >
+                          <div>
+                            <span class="d-block font-weight-bold p-name">{{
+                              orderD.product_name
+                            }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="product-price">
+                        <h6>${{ orderD.selling_price }}</h6>
+                      </div>
+                    </div>
+
+                    <div class="mt-5 amount row">
+                      <div class="d-flex justify-content-center col-md-6"></div>
+                      <div class="col-md-6">
+                        <div class="billing">
+                          <hr />
+                          <div class="d-flex justify-content-between mt-1">
+                            <span class="font-weight-bold">Total</span
+                            ><span class="font-weight-bold text-success"
+                              >${{ ordersDetails.total }}</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Order -->
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
     </div>
@@ -105,46 +209,36 @@
                 <tr>
                   <th>Order ID</th>
                   <th>Customer</th>
-                  <th>Item</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Address</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><a href="#">RA0449</a></td>
-                  <td>Udin Wayang</td>
-                  <td>Nasi Padang</td>
-                  <td><span class="badge badge-info">Processing</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#">RA5324</a></td>
-                  <td>Jaenab Bajigur</td>
-                  <td>Gundam 90' Edition</td>
-                  <td><span class="badge badge-info">Processing</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#">RA8568</a></td>
-                  <td>Rivat Mahesa</td>
-                  <td>Oblong T-Shirt</td>
-                  <td><span class="badge badge-info">Processing</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#">RA1453</a></td>
-                  <td>Indri Junanda</td>
-                  <td>Hat Rounded</td>
-                  <td><span class="badge badge-info">Processing</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                </tr>
-                <tr>
-                  <td><a href="#">RA1998</a></td>
-                  <td>Udin Cilok</td>
-                  <td>Baby Powder</td>
-                  <td><span class="badge badge-info">Processing</span></td>
-                  <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+                <tr v-for="order in orders" :key="order.id">
+                  <td>{{ order.id }}</td>
+                  <td>{{ order.name }}</td>
+                  <td>{{ order.phone }}</td>
+                  <td>{{ order.email }}</td>
+                  <td>{{ order.address }}</td>
+                  <td v-if="order.status == 'pending'">
+                    <span class="badge badge-warning">Pending</span>
+                  </td>
+                  <td v-if="order.status == 'confirm'">
+                    <span class="badge badge-info">Confirmed</span>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-sm btn-primary"
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                      @click="findOrder(order.id)"
+                    >
+                      Detail
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -159,10 +253,32 @@
 
 <script>
 export default {
+  data() {
+    return {
+      orders: [],
+      ordersDetails: [],
+    };
+  },
+  methods: {
+    allOrder() {
+      axios
+        .get("/api/order")
+        .then(({ data }) => (this.orders = data))
+        .catch((err) => {});
+    },
+    findOrder(id) {
+      axios
+        .post("/api/findOrder", { order_id: id })
+        .then(({ data }) => (this.ordersDetails = data))
+        .catch((err) => {});
+    },
+  },
+
   created() {
     if (!User.loggedIn() || User.role() === "client") {
       this.$router.push({ name: "/" });
     }
+    this.allOrder();
   },
 };
 </script>

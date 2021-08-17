@@ -17,8 +17,19 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order = Order::all();
-        // $order = DB::table('orders')->where('status', 'pending')->first();
+        $order = DB::table('orders')
+            ->join('users', 'orders.user_id', 'users.id')
+            ->select(
+                'orders.id',
+                'users.name',
+                'users.phone',
+                'users.address',
+                'users.email',
+                'orders.created_at',
+                'orders.status',
+            )
+            ->orderBy('orders.created_at', 'DESC')
+            ->get();
 
         return response()->json($order);
     }
@@ -50,7 +61,6 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -76,47 +86,49 @@ class OrderController extends Controller
         //
     }
 
+
     public function confirmedOrder(Request $request)
+    {
+        $order = DB::table('orders')
+            ->join('users', 'orders.user_id', 'users.id')
+            ->select(
+                'orders.id',
+                'users.name',
+                'users.phone',
+                'users.address',
+                'users.email',
+                'orders.created_at',
+
+            )
+            ->where('orders.status', 'confirm')
+            ->where('orders.user_id', $request->user_id)
+            ->orderBy('orders.created_at', 'DESC')
+            ->get();
+
+        return response()->json($order);
+    }
+
+    public function findOrder(Request $request)
     {
         $order = DB::table('carts')
             ->join('products', 'carts.product_id', 'products.id')
             ->join('orders', 'carts.order_id', 'orders.id')
             ->select(
-
-                'products.created_at',
+                'carts.id',
+                'orders.date',
+                'products.product_name',
+                'products.product_code',
+                'products.description',
                 'products.selling_price',
-                DB::raw('SUM(products.selling_price) as total_sales')
+                'products.buying_date',
+                'products.image',
+                'products.product_quantity',
+                'products.created_at',
             )
-            ->groupBy('products.selling_price')
-            ->where('orders.status', 'confirm')
-            ->where('orders.user_id', $request->user_id)
-            ->orderBy('orders.id', 'DESC')
+            ->where('orders.id', $request->order_id)
+            ->orderBy('carts.id', 'DESC')
             ->get();
 
-
-
-        return response()->json($order);
-        // return response()->json([$order, 'OrderItem' => $order->count(), 'total' => $order->sum('selling_price')]);
+        return response()->json([$order,  'total' => $order->sum('selling_price'), 'orderDate' => $order->max('date')]);
     }
-
-
-
-
-    // public function confirmedOrder(Request $request)
-    // {
-    //     $order = DB::table('orders')
-    //         ->join('carts', 'carts.order_id', 'orders.id')
-    //         ->select(
-    //             'orders.id',
-    //             'carts.product_id',
-    //         )
-    //         ->where('orders.status', 'confirm')
-    //         ->where('orders.user_id', $request->user_id)
-    //         ->orderBy('orders.id', 'DESC')
-    //         ->get();
-
-    //     return response()->json($order);
-
-    //     // return response()->json([$order, 'OrderItem' => $order->count(), 'total' => $order->sum('selling_price')]);
-    // }
 }
