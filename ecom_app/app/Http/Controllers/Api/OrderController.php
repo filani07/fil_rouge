@@ -21,6 +21,7 @@ class OrderController extends Controller
             ->join('users', 'orders.user_id', 'users.id')
             ->select(
                 'orders.id',
+                'orders.user_id',
                 'users.name',
                 'users.phone',
                 'users.address',
@@ -31,7 +32,7 @@ class OrderController extends Controller
             ->orderBy('orders.created_at', 'DESC')
             ->get();
 
-        return response()->json($order);
+        return response()->json([$order, 'users' => $order->groupBy('user_id')->count(), 'confirm' => $order->where('status', 'confirm')->count('status'), 'pending' => $order->where('status', 'pending')->count('status')]);
     }
 
     /**

@@ -136,9 +136,11 @@
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">
-                  Sales
+                  Orders
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                  {{ orders.confirm }}
+                </div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-chart-pie fa-2x text-success"></i>
@@ -157,7 +159,7 @@
                   Users
                 </div>
                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                  366
+                  {{ orders.users }}
                 </div>
               </div>
               <div class="col-auto">
@@ -176,7 +178,9 @@
                 <div class="text-xs font-weight-bold text-uppercase mb-1">
                   Add to Cart
                 </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                  {{ orders.pending }}
+                </div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-shopping-cart fa-2x text-warning"></i>
@@ -217,7 +221,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="order in orders" :key="order.id">
+                <tr v-for="order in orders[0]" :key="order.id">
                   <td>{{ order.id }}</td>
                   <td>{{ order.name }}</td>
                   <td>{{ order.phone }}</td>
