@@ -197,7 +197,6 @@ export default {
       if (!this.userBool) {
         Swal.fire({
           title: "Please create an account to Make Purchase",
-          // text: "Please create an account to Make Purchase",
           icon: "info",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",

@@ -4844,9 +4844,18 @@ __webpack_require__.r(__webpack_exports__);
       var _this4 = this;
 
       axios.post("/api/confirmCart", this.form).then(function () {
-        _this4.$router.push({
-          name: "order"
+        var newLocal = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
+          title: "your order has been successfully",
+          icon: "success",
+          showCancelButton: false,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "OK!"
         });
+
+        _this4.allCart();
+
+        _this4.UserCart();
       })["catch"](function (err) {});
     }
   },
@@ -5081,7 +5090,6 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.userBool) {
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
           title: "Please create an account to Make Purchase",
-          // text: "Please create an account to Make Purchase",
           icon: "info",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",

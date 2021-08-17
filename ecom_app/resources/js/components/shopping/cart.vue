@@ -247,7 +247,16 @@ export default {
       axios
         .post("/api/confirmCart", this.form)
         .then(() => {
-          this.$router.push({ name: "order" });
+          const newLocal = Swal.fire({
+            title: "your order has been successfully",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "OK!",
+          });
+          this.allCart();
+          this.UserCart();
         })
         .catch((err) => {});
     },
