@@ -119,7 +119,7 @@
                   Earnings
                 </div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                  $40,000
+                  ${{ revenue.total }}
                 </div>
               </div>
               <div class="col-auto">
@@ -259,6 +259,7 @@
 export default {
   data() {
     return {
+      revenue: "",
       orders: [],
       ordersDetails: [],
     };
@@ -268,6 +269,12 @@ export default {
       axios
         .get("/api/order")
         .then(({ data }) => (this.orders = data))
+        .catch((err) => {});
+    },
+    earning() {
+      axios
+        .get("/api/earning")
+        .then(({ data }) => (this.revenue = data))
         .catch((err) => {});
     },
     findOrder(id) {
@@ -283,6 +290,7 @@ export default {
       this.$router.push({ name: "/" });
     }
     this.allOrder();
+    this.earning();
   },
 };
 </script>

@@ -44,3 +44,4 @@ Route::post('confirmCart', [CartController::class, 'confirmCart']);
 Route::post('getCartUser', [CartController::class, 'getCartUser']);
 Route::post('confirmedOrder', [OrderController::class, 'confirmedOrder']);
 Route::post('findOrder', [OrderController::class, 'findOrder']);
+Route::get('earning', [OrderController::class, 'earning']);

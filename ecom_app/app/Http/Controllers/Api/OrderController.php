@@ -132,4 +132,20 @@ class OrderController extends Controller
 
         return response()->json([$order,  'total' => $order->sum('selling_price'), 'orderDate' => $order->max('date')]);
     }
+
+    public function earning()
+    {
+        $cart = DB::table('carts')
+            ->join('products', 'carts.product_id', 'products.id')
+            ->join('orders', 'carts.order_id', 'orders.id')
+            ->select(
+                'carts.id',
+                'products.selling_price',
+
+            )
+            ->where('orders.status', 'confirm')
+            ->get();
+
+        return response()->json(['total' => $cart->sum('selling_price')]);
+    }
 }

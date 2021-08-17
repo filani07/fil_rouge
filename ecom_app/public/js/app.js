@@ -3697,6 +3697,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      revenue: "",
       orders: [],
       ordersDetails: []
     };
@@ -3710,14 +3711,22 @@ __webpack_require__.r(__webpack_exports__);
         return _this.orders = data;
       })["catch"](function (err) {});
     },
-    findOrder: function findOrder(id) {
+    earning: function earning() {
       var _this2 = this;
+
+      axios.get("/api/earning").then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.revenue = data;
+      })["catch"](function (err) {});
+    },
+    findOrder: function findOrder(id) {
+      var _this3 = this;
 
       axios.post("/api/findOrder", {
         order_id: id
-      }).then(function (_ref2) {
-        var data = _ref2.data;
-        return _this2.ordersDetails = data;
+      }).then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.ordersDetails = data;
       })["catch"](function (err) {});
     }
   },
@@ -3729,6 +3738,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     this.allOrder();
+    this.earning();
   }
 });
 
@@ -53134,7 +53144,37 @@ var render = function() {
     _vm._m(1),
     _vm._v(" "),
     _c("div", { staticClass: "row mb-3" }, [
-      _vm._m(2),
+      _c("div", { staticClass: "col-xl-3 col-md-6 mb-4" }, [
+        _c("div", { staticClass: "card h-100" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row align-items-center" }, [
+              _c("div", { staticClass: "col mr-2" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "text-xs font-weight-bold text-uppercase mb-1"
+                  },
+                  [_vm._v("\n                Earnings\n              ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "h5 mb-0 font-weight-bold text-gray-800" },
+                  [
+                    _vm._v(
+                      "\n                $" +
+                        _vm._s(_vm.revenue.total) +
+                        "\n              "
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(2)
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-xl-3 col-md-6 mb-4" }, [
         _c("div", { staticClass: "card h-100" }, [
@@ -53359,32 +53399,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-3 col-md-6 mb-4" }, [
-      _c("div", { staticClass: "card h-100" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row align-items-center" }, [
-            _c("div", { staticClass: "col mr-2" }, [
-              _c(
-                "div",
-                { staticClass: "text-xs font-weight-bold text-uppercase mb-1" },
-                [_vm._v("\n                Earnings\n              ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "h5 mb-0 font-weight-bold text-gray-800" },
-                [_vm._v("\n                $40,000\n              ")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-auto" }, [
-              _c("i", {
-                staticClass: "fas fa-money-check-alt fa-2x text-primary"
-              })
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "col-auto" }, [
+      _c("i", { staticClass: "fas fa-money-check-alt fa-2x text-primary" })
     ])
   },
   function() {
